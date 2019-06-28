@@ -1,0 +1,35 @@
+<!-- BEGIN: ADMIN -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link rel="stylesheet" href="{baseUrl}css/all.css">
+    <link href="{baseUrl}css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{baseUrl}css/main.css">
+    <script src="{baseUrl}js/bootstrap.min.js"></script>
+    <script src="{baseUrl}js/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+    <script src="{baseUrl}js/main.js"></script>
+    <title>{title}</title>
+</head>
+
+<body style="padding: 0; margin: 0">
+    <div style="min-width: 100%; background-color: grey; height: 100px; margin: 0">
+        <img src="{baseUrl}/admin/resources/logo 2.png" height="100px" href="www.google.com">
+        <div class="session">
+            <a class="btn btn-danger" href="?a=logout">Log Out</a>
+        </div>
+    </div>
+    <div>
+        {navbar}
+    </div>
+    <div class="content" style="background-color: rgba(0, 0, 0, 0)">
+        {content}
+    </div>
+</body>
+
+</html>
+<!-- END: ADMIN -->

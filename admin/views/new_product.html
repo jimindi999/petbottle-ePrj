@@ -1,0 +1,19 @@
+<!-- BEGIN: NEW_PRODUCT -->
+<form method="POST" action="?a=new_product" name="frmNewProduct" enctype="multipart/form-data">
+    <span>Product Name: </span><input type="text" name="txtName" required><br>
+    <span>Price: </span><input type="text" name="txtPrice" required><br>
+    <select name="slCat" id="categories" required>
+        <option value="" hidden selected>Categories</option>
+        <!-- BEGIN: CAT_LIST-->
+        <option value="{LS.cat_name}">{LS.cat_name}</option>
+        <!-- END: CAT_LIST-->
+    </select><br>
+    <span>Quantity: </span><input type="text" name="txtQuantity" required><br>
+    <span>Description: </span><textarea name="description" id="description" required></textarea><br>
+    <!-- <script>
+            CKEDITOR.replace( 'description' );
+    </script> -->
+    <span>Image: </span><input type="file" name="imgUl" required><br>
+    <input type="submit">
+</form>
+<!-- END: NEW_PRODUCT -->

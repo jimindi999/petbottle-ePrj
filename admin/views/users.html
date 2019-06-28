@@ -1,0 +1,57 @@
+<!-- BEGIN: ADMIN -->
+<form name="frmListing" method="POST">
+    <div class="form-group input-group">
+        <a class="btn btn-success" href="?a=new_user" style="margin-right: 20px">Create new user</a>
+        <input id="txtSearch" name="search" class="col-7" type="text"
+            placeholder="Search: username, name, email, gender" value="{search}">
+        <div class="input-group-prepend">
+            <button id="btnSearch" type="submit" name="btnSearch" class="btn btn-primary"> <i
+                    class="fas fa-search"></i></button>
+        </div>
+        <div class="delAll">
+            <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
+        </div>
+    </div> <!-- form-group// -->
+    <table name="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
+        <caption>List of users</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Position</th>
+                <th>Date of Birth</th>
+                <th>Level</th>
+                <th colspan="2">Action</th>
+                <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
+            </tr>
+        </thead>
+        <!-- BEGIN: LS -->
+        <tr>
+            <td>{LS.no}</td>
+            <td>{LS.id}</td>
+            <td>{LS.username}</td>
+            <td>{LS.email}</td>
+            <td>{LS.firstName}</td>
+            <td>{LS.lastName}</td>
+            <td>{LS.gender}</td>
+            <td>{LS.position}</td>
+            <td>{LS.dob}</td>
+            <td>{LS.admin_level}</td>
+            <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
+            <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
+            <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
+        </tr>
+        <!-- END: LS -->
+        <tfoot>
+            <tr>
+                <td colspan="13">{page}</td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+<!-- END: ADMIN -->

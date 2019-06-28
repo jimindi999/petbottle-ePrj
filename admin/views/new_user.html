@@ -1,0 +1,101 @@
+<!-- BEGIN: NEW_USER -->
+<form method="POST" name="frmReg" id="regForm" action="?a=new_user">
+    <div class="container">
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="width: 500px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <form>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input name="txtUsername" id="user" class="form-control" placeholder="Username" type="text"
+                            value="{username}">
+                    </div>
+                    <div>
+                        <span class="errorMess" id="errUser">{erUser}</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input name="txtEmail" id="email" class="form-control" placeholder="Email address" type="text"
+                            value="{email}">
+                    </div>
+                    <div>
+                        <span class="errorMess" id="errEmail">{erEmail}</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input name="txtPassword" id="pass" class="form-control" placeholder="Create password"
+                            type="password">
+                    </div>
+                    <div>
+                        <span class="errorMess" id="errPass">{erPass}</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input name="txtPasswordConf" id="passConf" class="form-control" placeholder="Repeat password"
+                            type="password">
+                    </div>
+                    <div>
+                        <span class="errorMess" id="errPassConf">{erPassConf}</span>
+                    </div>
+                    <hr>
+                    <h5>Personal Details</h5><br>
+                    <input name="txtFirstName" id="fName" class="form-control" placeholder="First name" type="text"
+                        value="{firstName}">
+                    <span class="errorMess" id="errFName">{erFName}</span>
+                    <input name="txtLastName" id="lName" class="form-control" placeholder="Last name" type="text"
+                        value="{lastName}">
+                    <span class="errorMess" id="errLName">{erLName}</span>
+                    <input name="txtBirthday" id="birthday" class="form-control" placeholder="Birthday" type="date"
+                        value="{birthday}" required>
+                    <span class="errorMess" id="errBirthday">{erDOB}</span>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+                        </div>
+                        <select id="gender" class="form-control" name="slGender" required>
+                            <option value="" hidden selected>Gender</option>
+                            <option value="Male" {slM}>Male</option>
+                            <option value="Female" {slF}>Female</option>
+                        </select>
+                    </div>
+                    {erGender}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fab fa-black-tie"></i> </span>
+                        </div>
+                        <select id="position" class="form-control" name="slPosition" required>
+                            <option value="" hidden selected>Position</option>
+                            <option value="Manager" {slManager}>Manager</option>
+                            <option value="Marketing" {slMarketing}>Marketing</option>
+                            <option value="Inventory" {slInventory}>Inventory</option>
+                        </select>
+                    </div>
+                    {erPos}
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-users-cog"></i> </span>
+                        </div>
+                        <select id="admin_level" class="form-control" name="slAdminLevel" required>
+                            <option value="" hidden selected>Level</option>
+                            <option value="Moderator" {slModerator}>Moderator</option>
+                            <option value="Normal" {slNormal}>Normal</option>
+                        </select>
+                    </div>
+                    {erLevel}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                    </div>
+                </form>
+            </article>
+        </div> <!-- card.// -->
+    </div>
+</form>
+<!-- END: NEW_USER -->

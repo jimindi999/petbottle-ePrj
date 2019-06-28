@@ -1,0 +1,83 @@
+<!-- BEGIN: ADMIN -->
+<script>
+    $(document).ready(function () {
+        var str = $("#txtSearch").val();
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var userObj = JSON.parse(this.responseText);
+                var cols = document.getElementById("tblTest").rows[0].cells.length;
+                var content = document.getElementById("tblTest");
+                var len = userObj.length;
+                for (var i = 1; i < len; i++) {
+                    var row = content.insertRow(i);
+                    for (var j = 0; j < cols; j++){
+                        var cell = row.insertCell(j);
+                        cell.innerHTML = i + "." + j;
+                    }
+                }       
+            }
+        }
+        xhttp.open("GET", "controllers/fetch.php", true);
+        xhttp.send();
+        
+    })
+</script>
+<form name="frmTest" method="POST">
+    <div class="form-group input-group">
+        <a class="btn btn-success" href="?a=new_user" style="margin-right: 20px">Create new user</a>
+        <input id="txtSearch" name="search" class="col-7" type="text"
+            placeholder="Search: username, name, email, gender" value="{search}" onkeyup="ajaxSearchTest(this.value)">
+        <div class="input-group-prepend">
+            <button id="btnSearch" type="submit" name="btnSearch" class="btn btn-primary"> <i
+                    class="fas fa-search"></i></button>
+        </div>
+        <span id="test"></span>
+        <div class="delAll">
+            <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
+        </div>
+    </div> <!-- form-group// -->
+    <table name="tblAdmin" class="tblAdmin" border="1" cellpadding="10" cellspacing="10" id="tblTest">
+        <tr>
+            <th>No.</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Position</th>
+            <th>Date of Birth</th>
+            <th>Level</th>
+            <th colspan="2">Action</th>
+            <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
+        </tr>
+        <!-- BEGIN: LS -->
+        <tbody>
+
+
+            <tr>
+                <td>{LS.no}</td>
+                <td>{LS.id}</td>
+                <td>{LS.username}</td>
+                <td>{LS.email}</td>
+                <td>{LS.firstName}</td>
+                <td>{LS.lastName}</td>
+                <td>{LS.gender}</td>
+                <td>{LS.position}</td>
+                <td>{LS.dob}</td>
+                <td>{LS.admin_level}</td>
+                <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
+                <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
+                <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
+            </tr>
+        </tbody>
+        <!-- END: LS -->
+        <tfoot>
+            <tr>
+                <td colspan="13">{page}</td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+<!-- END: ADMIN -->

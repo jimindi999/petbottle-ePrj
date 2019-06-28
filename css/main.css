@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative;
+    min-width: 100%;
+    height: 60px;
+    overflow: auto;
+}
+
+.content {
+    /* position: relative; */
+    min-width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.session {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.pager {
+    margin-top: 5px;
+    padding: 1px 10px 1px 10px;
+    float: right;
+    border-right: 1px solid black;
+}
+
+.pager:first-child {
+    border: 0;
+}
+
+.tblListing {
+    position: relative;
+    margin: 20px auto;
+    width: 1000px;
+    font-size: 14px;
+}
+
+.tblListing tr td {
+    padding: 10px 5px 10px 5px;
+    vertical-align: middle;
+}
+
+.tblListing tr td img {
+    display: block;
+    margin: 0 auto;
+}
+
+.tblListing tr th {
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+}
+
+.tblListing tr td a {
+    color: var(--orange);
+}
+
+.tblListing tr td:nth-last-child(-n+3),
+.tblListing tr td:nth-child(-n+2) {
+    text-align: center;
+}
+
+form[name=frmListing] {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.delAll {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+tfoot {
+    border: 0;
+}
+
+.card {
+    margin-top: 0px;
+    position: relative;
+    opacity: 1;
+}
+
+.bg-light {
+    position: relative;
+    opacity: 1;
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+}
+
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.errorMess {
+    margin-top: -10px;
+    font-size: 12px;
+    color: red;
+}
+
+.form-group {
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}
+
+#logreg-forms {
+    width: 412px;
+    margin: 10% auto;
+    background-color: #f3f3f3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+#logreg-forms form {
+    width: 100%;
+    max-width: 410px;
+    padding: 15px;
+    margin: auto;
+}
+
+#logreg-forms .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#logreg-forms .form-control:focus {
+    z-index: 2;
+}
+
+#logreg-forms .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#logreg-forms .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#logreg-forms a {
+    display: block;
+    padding-top: 10px;
+}
+
+
+#logreg-forms button[type="submit"] {
+    margin-top: 10px;
+}
+
+#forgot_pswd {
+    color: lightseagreen;
+}
+.container {
+    margin-top: 10px;
+}
+
+.errorMess {
+    margin-top: -10px;
+    font-size: 12px;
+    color: red;
+}
+
+.form-group {
+    margin-top: 1rem;
+    margin-bottom: 5px;
+}
+
+#forgot_pswd {
+    color: lightseagreen;
+}
+
+.catList {
+    max-width: 65%;
+    margin: 0 auto;
+    padding: 10px 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 3% 3%;
+}
+
+.cat_item {
+    text-align: center;
+}
+
+.cat_item a {
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}
+
+.cat_item img {
+    width: 100%;
+    height: auto;
+}
+
+.cat {
+    margin: 50px;
+    display: inline-block;
+    /* float: left; */
+}
+
+.cat_img {
+    width: 200px;
+    /* width: 200px; */
+}
+
+.cat_name {
+    text-align: center;
+}
+
+.home {
+    margin: 0 auto;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 50px 50px;
+}
+
+.home a {
+    text-decoration: none;
+}
+
+.item {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red {
+    background-color: var(--red);
+}
+
+.blue {
+    background-color: var(--blue);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+
+@media screen and (max-width: 767px) {
+    .catList {
+        grid-template-columns: auto auto;
+    }
+}
