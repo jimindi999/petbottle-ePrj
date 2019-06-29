@@ -4,8 +4,8 @@
     }else{
         session_unset();
         $_SESSION = array();
-        setcookie("user_id", "", time() - 3600);
-        setcookie("admin", "", time() - 3600);
+        setcookie("user_id", "", time() - 86400, "/");
+        setcookie("admin", "", time() - 86400, "/");
         session_destroy();
         $f->redir('index.php');
     }

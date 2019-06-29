@@ -4,7 +4,7 @@
         $_SESSION['user_id'] = $_COOKIE['user_id'];
         $_SESSION['admin'] = $_COOKIE['admin'];
     }
-    if (isset($_SESSION['user_id'])){
+    if(isset($_SESSION['user_id'])){
         $xtpl = new XTemplate("views/index.html");        
         $a = (isset($_GET['a']))?$_GET['a']:'home';
         if($a != ''){
