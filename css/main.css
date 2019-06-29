@@ -204,9 +204,14 @@ tfoot {
 
 #logreg-forms a {
     display: block;
-    padding-top: 10px;
+}
+#logreg-forms #forgot_pswd {
+    margin-top: 10px;
 }
 
+#logreg-forms input[type='checkbox']{
+    margin-top: 15px;
+}
 
 #logreg-forms button[type="submit"] {
     margin-top: 10px;

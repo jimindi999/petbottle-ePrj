@@ -5,6 +5,7 @@
         $_SESSION['user_id'] = $_COOKIE['user_id'];
         $_SESSION['admin'] = $_COOKIE['admin'];
     }
+    $a = (isset($_GET['a']))?$_GET['a']:'home';
     if(isset($_SESSION['user_id'])){
         $xtpl = new XTemplate("views/index.html");        
         $a = (isset($_GET['a']))?$_GET['a']:'home';
@@ -21,6 +22,8 @@
         $xtpl -> assign("baseUrl", $baseUrl);
         $xtpl -> parse("ADMIN");
         $xtpl -> out("ADMIN");
+    }else if($a === 'forgot_password'){
+        include ("controllers/forgot_password.php");
     }else{
         include ("controllers/login.php");
     }
