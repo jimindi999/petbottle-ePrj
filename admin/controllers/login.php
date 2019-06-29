@@ -11,6 +11,10 @@
                 if (password_verify($pass, $user['password'])){
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['admin'] = $user['admin_level'];
+                    if(isset($_POST['ckRemember'])){
+                        setcookie("user_id", $user['id'], time() + 30 * 24 * 60 * 60, "/");
+                        setcookie("admin", $user['admin_level'], time() + 30 * 24 * 60 *60, "/");
+                    }
                     $f->redir("index.php");
                 }else $xtpa->assign('errorMess','*Wrong password');
             }else $xtpa->assign('errorMess','*Wrong username or email');

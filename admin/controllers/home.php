@@ -2,6 +2,8 @@
     if (!isset($_SESSION['user_id'])){
         $f->redir("index.php");
     }else{
+        echo $_SESSION['user_id'];
+        echo "<br>".$_SESSION['admin'];
         $xtpa = new XTemplate("views/home.html");
         //Hide user panel from normal users
         if ($_SESSION['admin'] === 'Admin' || $_SESSION['admin'] === 'Moderator'){
@@ -10,7 +12,7 @@
             $hidden = "<a href='?a=users'>
                             <div class='item red'>
                                 Users:<br>
-                                {$count}
+                                ({$count})
                             </div>
                         </a>";
             $xtpa->assign('hidden', $hidden);
