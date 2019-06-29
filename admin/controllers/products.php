@@ -11,8 +11,9 @@
     }else if(isset($_GET['s'])){
         //If 'Search Button' is used
         $str = $_GET['s'];
-        $search_val = str_replace('+','',$str);            
-        $str = str_replace('+','%',$str);
+        // $search_val = str_replace('+','',$str);   
+        $search_val = $str;         
+        $str = str_replace(' ','%',$str);
         $str = '%'.$str.'%';
         $condition .= " AND pro_name LIKE '{$str}' OR pro_price like '{$str}' OR pro_quantity like '{$str}'";
         $xtpa->assign('search',$search_val);
@@ -34,6 +35,9 @@
             $r['no'] = $i;
             $cat_name = ($db->fetch("SELECT * FROM categories WHERE id = {$r['cat_id']}"))[0]['cat_name'];
             $r['cat_name'] = $cat_name;
+            $s = (isset($_GET['s']))?implode('+', explode(' ',$_GET['s'])):'';
+            $r['s'] = $s;
+            $r['page'] = (isset($page))?$page:'';
             $xtpa->insert_loop("PRODUCTS.LS", array("LS"=>$r));
             $i++;
         }

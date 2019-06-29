@@ -38,6 +38,7 @@
         $t = count($products);
         $l = 10;
         $page = (isset($_GET['page']))?$_GET['page']:1;
+        if ($page === '') $page = 1;
         $offset = ($page - 1) * $l;
         $condition .= " ORDER BY id ASC LIMIT {$offset}, {$l} ";
         $url = "a=categories&cat={$cat_id}";

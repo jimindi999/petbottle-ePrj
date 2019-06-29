@@ -3,6 +3,13 @@
     $id = $_GET['id'];
     $item = $db->fetch("SELECT * FROM products WHERE id = {$id}");
     $item = $item[0];
+    $url_cat = (isset($_GET['cat']))?$_GET['cat']:'';
+    $s = (isset($_GET['s']))?$_GET['s']:'';
+    $s = str_replace(' ', '+', $s);
+    $page = (isset($_GET['page']))?$_GET['page']:'';
+    if ($url_cat === '') $url = "?a=products&s={$s}&page={$page}";
+    else $url = "?a=categories&cat={$url_cat}&s={$s}&page={$page}";
+    $xtpa->assign('url', $url);
     if ($_POST){
         $do_save = 1;
         $name = $_POST['txtName'];
