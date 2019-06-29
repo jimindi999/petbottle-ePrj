@@ -30,7 +30,7 @@
             $search_val = str_replace('+','',$str);            
             $str = str_replace('+','%',$str);
             $str = '%'.$str.'%';
-            $condition .= " AND pro_name LIKE '{$str}' OR pro_price like '{$str}' OR pro_quantity like '{$str}'";
+            $condition .= " AND (pro_name LIKE '{$str}' OR pro_price like '{$str}' OR pro_quantity like '{$str}')";
             $xtpa->assign('search',$search_val);
         }
         //Fetch all entries from DB with condition created above
@@ -45,12 +45,16 @@
         //Fetch only 10 entries from DB with condition and limit as above
         $products = $db->fetch("SELECT * FROM products WHERE {$condition}");
         $pager = $f->paging($url,$t,$l,'pager', (isset($_GET['s']))?$_GET['s']:'');
+        echo $condition;
         $cat_name = ($db->fetch("SELECT * FROM categories WHERE id = {$cat_id}"))[0]['cat_name'];
         if (count($products) > 0){
             $i = $offset + 1;
             foreach($products as $r){
                 $r['no'] = $i;
                 $r['cat_name'] = $cat_name;
+                $s = (isset($_GET['s']))?implode('+', explode(' ',$_GET['s'])):'';
+                $r['s'] = $s;
+                $r['page'] = (isset($page))?$page:'1';
                 $xtpa->insert_loop("CAT_PRODUCTS.LS", array("LS"=>$r));
                 $i++;
             }

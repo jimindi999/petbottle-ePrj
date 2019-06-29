@@ -4,6 +4,7 @@
     $item = $db->fetch("SELECT * FROM products WHERE id = {$id}");
     $item = $item[0];
     $url_cat = (isset($_GET['cat']))?$_GET['cat']:'';
+    //prepare search keyword $s and $page to redirect back when click 'Go back' button
     $s = (isset($_GET['s']))?$_GET['s']:'';
     $s = str_replace(' ', '+', $s);
     $page = (isset($_GET['page']))?$_GET['page']:'';
