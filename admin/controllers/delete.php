@@ -16,15 +16,28 @@
         }
         if ($m == 'users') $table = 'users';
         else $table = 'products';
-        $rs = $db->fetch("SELECT @row_num:=@row_num+1 as nbr, id FROM {$table} WHERE {$condition} ORDER BY id");
+        $rs = $db->fetch("SELECT *, @row_num:=@row_num+1 as nbr FROM {$table} WHERE {$condition} ORDER BY id");
         foreach ($rs as $r){
             if($id == $r['id']){
                 $no = $r['nbr'];
+                $img_loc = (isset($r['pro_img']))?$r['pro_img']:'';
+                $doc_loc = (isset($r['pro_doc']))?$r['pro_doc']:'';
                 break;
             }
         }
         $p = ceil($no/10);
         $sql = "DELETE FROM {$table} WHERE id = '{$id}' ";
+        //Get location of doc and img file on sv and delete them
+        if ($doc_loc != ''){
+            $doc_loc = explode($baseUrl, $doc_loc);
+            $doc_loc = '../'.$doc_loc[1];
+            unlink($doc_loc);
+        }
+        if ($img_loc != ''){
+            $img_loc = explode($baseUrl, $img_loc);
+            $img_loc = '../'.$img_loc[1];
+            unlink($img_loc);
+        }
         $db->execSQL($sql);
         if($cat == '') $f->redir("?a={$m}&s={$s}&page={$p}");
         else $f->redir("?a={$m}&cat={$cat}&s={$s}&page={$p}");

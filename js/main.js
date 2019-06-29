@@ -200,8 +200,7 @@ function del(_id) {
         //Get current category key word from url to redirect back to current page
         var cat = (url.match(/(\&cat\=).*?(?=(\&|$))/)) ? url.match(/(\&cat\=).*?(?=(\&|$))/)[0] : '';
         a = a.substring(1, a.len);
-        if (s.length > 0) window.location.href = "?a=delete&m" + a + cat + s + "&id=" + _id;
-        else window.location.href = "?a=delete&m" + a + cat + "&id=" + _id;
+        window.location.href = "?a=delete&m" + a + cat + s + "&id=" + _id;
     }
 }
 
@@ -219,4 +218,12 @@ function checkAll() {
             }
         }
     }
+}
+
+function setLevel(_id, _no){
+    var level = document.getElementById("tblAdmin").rows[_no].cells[9].children[0].value;
+    var url = window.location.href;
+    var s = (url.match(/(\&s\=).*?(?=($|\&))/)) ? url.match(/(\&s\=).*?(?=($|\&))/)[0] : '';
+    var page = (url.match(/(\&page\=).*?(?=($|\&))/)) ? url.match(/(\&page\=).*?(?=($|\&))/)[0] : '';
+    window.location.href = "?a=edit_level" + s + page + "&id=" + _id + "&level=" + level;
 }

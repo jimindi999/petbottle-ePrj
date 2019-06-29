@@ -38,11 +38,40 @@
             $i = $offset + 1;
             foreach($user as $r){
                 $r['no'] = $i;
+                $r['dob'] = implode('/',array_reverse(explode('-',$r['dob'])));
+                $slAdmin = ($r['admin_level'] === 'Admin')?'selected':'';
+                $slModerator = ($r['admin_level'] === 'Moderator')?'selected':'';
+                $slNormal = ($r['admin_level'] === 'Normal')?'selected':'';  
+                //Restrict the action user can take depend on their level
+                //Moderator can not change admin's level              
+                if ($_SESSION['admin'] == 'Moderator' && $r['admin_level'] === 'Admin'){
+                    $r['update'] = "";
+                    $r['select'] = $r['admin_level'];
+                }
+                //Admin can change all users's level and can set other to admin
+                else if ($_SESSION['admin'] === 'Admin'){
+                    $r['update'] = "<a href='javascript:void()' onclick='setLevel("."{$r['id']}, {$r['no']}".")'>Update</a>";
+                    $r['select'] = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
+                                    <option value='' hidden>Level</option>
+                                    <option value='Admin' {$slAdmin}>Admin</option>
+                                    <option value='Moderator' {$slModerator}>Moderator</option>
+                                    <option value='Normal' {$slNormal}>Normal</option>
+                                </select>";
+                }
+                //Moderator can only set other to moderator at max, can not set to admin
+                else{
+                    $r['update'] = "<a href='javascript:void()' onclick='setLevel("."{$r['id']}, {$r['no']}".")'>Update</a>";
+                    $r['select'] = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
+                                    <option value='' hidden>Level</option>
+                                    <option value='Moderator' {$slModerator}>Moderator</option>
+                                    <option value='Normal' {$slNormal}>Normal</option>
+                                </select>";
+                }
                 $xtpa->insert_loop("ADMIN.LS", array('LS' => $r));
                 $i++;
             }
         }
-        $xtpl->assign("title", "Users");
+        $xtpl->assign("title", "Admin panel");
         $xtpa->assign('page',$pager);
         $xtpa->parse("ADMIN");
         $content = $xtpa-> text("ADMIN");

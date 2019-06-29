@@ -1,17 +1,7 @@
-<!-- BEGIN: CATEGORIES-->
-<div class="catList">
-    <!-- BEGIN: LIST -->
-    <div class="cat_item"><a href="?a=categories&cat={CAT.id}">
-    <img src="{CAT.cat_img}" class="cat_img">
-        <p class="cat_name">{CAT.cat_name} ({CAT.count})</p>
-    </a></div>
-    <!-- END: LIST -->
-</div>
-<!-- END: CATEGORIES-->
-<!-- BEGIN: CAT_PRODUCTS -->
+<!-- BEGIN: PRODUCTS -->
 <form name="frmListing" method="POST">
     <div class="form-group input-group">
-        <a class="btn btn-success" href="?a=new_product&cat={cat_id}" style="margin-right: 20px">Add new product</a>
+        <a class="btn btn-success" href="?a=new_product&cat=none" style="margin-right: 20px">Add new product</a>
         <input id="txtSearch" name="search" class="col-7" type="text"
             placeholder="Search: product name, price, quantity" value="{search}">
         <div class="input-group-prepend">
@@ -22,7 +12,8 @@
             <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
-    <table name="tblListing" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
+    <table name="tblListing" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10"
+        cellspacing="10">
         <tr>
             <th>No.</th>
             <th>ID</th>
@@ -38,12 +29,11 @@
         <tr>
             <td>{LS.no}</td>
             <td>{LS.id}</td>
-            <td><img src="{LS.pro_img}" width="100px"</td>
-            <td>{LS.cat_name}</td>
+            <td><img src="{LS.pro_img}" width="100px" </td> <td>{LS.cat_name}</td>
             <td>{LS.pro_name}</td>
             <td>{LS.pro_price}</td>
             <td>{LS.pro_quantity}</td>
-            <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
+            <td><a href="?a=product_edit&id={LS.id}">Edit</a></td>
             <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
             <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
         </tr>
@@ -55,4 +45,4 @@
         </tfoot>
     </table>
 </form>
-<!-- END: CAT_PRODUCTS -->
+<!-- END: PRODUCTS -->

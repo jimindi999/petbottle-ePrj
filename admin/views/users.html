@@ -12,7 +12,7 @@
             <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
-    <table name="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
+    <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
         <caption>List of users</caption>
         <thead>
             <tr>
@@ -25,7 +25,7 @@
                 <th>Gender</th>
                 <th>Position</th>
                 <th>Date of Birth</th>
-                <th>Level</th>
+                <th>User Level</th>
                 <th colspan="2">Action</th>
                 <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
             </tr>
@@ -41,8 +41,9 @@
             <td>{LS.gender}</td>
             <td>{LS.position}</td>
             <td>{LS.dob}</td>
-            <td>{LS.admin_level}</td>
-            <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
+            <td>{LS.select}</td>
+            <!-- <td><a href="javascript:void()" onclick="setLevel({LS.id}, {LS.no})">Update</a></td> -->
+            <td>{LS.update}</td>
             <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
             <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
         </tr>

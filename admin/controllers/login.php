@@ -11,6 +11,7 @@
                 if (password_verify($pass, $user['password'])){
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['admin'] = $user['admin_level'];
+                    $_SESSION['username'] = $user['username'];
                     //Create cookie if user check 'Remember me'
                     if(isset($_POST['ckRemember'])){
                         setcookie("user_id", $user['id'], time() + 30 * 24 * 60 * 60, "/");

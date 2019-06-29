@@ -1,5 +1,6 @@
 <?php
     $xtpa = new XTemplate("views/new_product.html");
+    $pos = (isset($_GET['cat']))?$_GET['cat']:'';
     $cat = $db->fetch("SELECT * FROM categories WHERE 1 = 1");
     //Dynamically create select tag with Categories from DB as options
     foreach($cat as $r){
@@ -16,7 +17,7 @@
         $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp');
         $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseUrl);
         $img = explode("|", $img_upload);
-        $doc_ext_arr = array('doc', 'docx', 'pdf');
+        $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
         $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseUrl);
         $doc = explode("|", $doc_upload);
         if($img[0] === 'failed'){
@@ -50,7 +51,8 @@
             $arr = preg_filter('/$/', '"', $arr);
             $db->insert("products", $arr);
             //Redirect back to current category page
-            $f->redir("?a=categories&cat={$cat_id}");
+            if ($pos != 'none' && $pos != '') $f->redir("?a=categories&cat={$cat_id}");
+            else $f->redir('?a=products');
         }else{
             $xtpa->assign('pro_name', $name);
             $xtpa->assign('pro_price', $price);

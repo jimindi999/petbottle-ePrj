@@ -8,5 +8,7 @@
     else if($nav === 'users') $xtpa->assign('admin','active');
     else if($nav === 'categories') $xtpa->assign('categories','active');
     else if($nav === 'products') $xtpa->assign('products','active');
+    else if($nav === 'new_product') $xtpa->assign('new_product','active');
+    $xtpa->assign('user', $_SESSION['username']);
     $xtpa->parse('NAVBAR');
     $navbar = $xtpa->text('NAVBAR');

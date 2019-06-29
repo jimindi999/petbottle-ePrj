@@ -83,11 +83,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fas fa-users-cog"></i> </span>
                         </div>
-                        <select id="admin_level" class="form-control" name="slAdminLevel" required>
-                            <option value="" hidden selected>Level</option>
-                            <option value="Moderator" {slModerator}>Moderator</option>
-                            <option value="Normal" {slNormal}>Normal</option>
-                        </select>
+                        {select}
                     </div>
                     {erLevel}
                     <div class="form-group">

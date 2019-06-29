@@ -9,6 +9,11 @@
     overflow: auto;
 }
 
+.user {
+    color: white;
+    margin-right: 50px;
+}
+
 .content {
     /* position: relative; */
     min-width: 100%;
@@ -40,16 +45,31 @@
     border: 0;
 }
 
+form[name=frmListing] {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
 .tblListing {
     position: relative;
     margin: 20px auto;
-    width: 1000px;
+    width: 1100px;
     font-size: 14px;
 }
 
 .tblListing tr td {
-    padding: 10px 5px 10px 5px;
+    padding: 10px;
     vertical-align: middle;
+}
+
+.tblListing tr td select {
+    width: 100px;
+    padding: 5px;
+    font-size: 14px;
 }
 
 .tblListing tr td img {
@@ -66,14 +86,9 @@
     color: var(--orange);
 }
 
-.tblListing tr td:nth-last-child(-n+3),
+.tblListing tr td:nth-last-child(-n+4),
 .tblListing tr td:nth-child(-n+2) {
     text-align: center;
-}
-
-form[name=frmListing] {
-    width: 1000px;
-    margin: 0 auto;
 }
 
 .delAll {
@@ -199,6 +214,7 @@ tfoot {
 #forgot_pswd {
     color: lightseagreen;
 }
+
 .container {
     margin-top: 10px;
 }

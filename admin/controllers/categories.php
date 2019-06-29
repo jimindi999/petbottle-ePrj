@@ -3,7 +3,7 @@
     $xtpa = new XTemplate("views/categories.html");
     if (!isset($_GET['cat'])){
         //If 'cat' does not presents => show a list of categories from DB
-        $cat = $db->fetch("SELECT * FROM categories WHERE 1 = 1");
+        $cat = $db->fetch("SELECT * FROM categories WHERE 1 = 1 ORDER BY cat_name ASC");
         foreach($cat as $r){
             $products = $db->fetch("SELECT * FROM products WHERE cat_id = {$r['id']}");
             $r['count'] = count($products);
@@ -15,6 +15,7 @@
     }else{
         //If 'cat' presents => show a list of products in that categories (based on cat_id)
         $cat_id = $_GET['cat'];
+        $xtpa->assign('cat_id', $cat_id);
         $condition = "1 = 1 AND cat_id = {$cat_id}";
         if(isset($_POST['btnDel'])){
             //If 'Delete All' button is clicked

@@ -1,5 +1,8 @@
 <?php
     $xtpa = new XTemplate ("views/new_user.html");
+    $slAdmin = '';
+    $slModerator = '';
+    $slNormal = '';
     if($_POST){
         $username = $_POST['txtUsername'];
         $email = $_POST['txtEmail'];
@@ -89,13 +92,40 @@
             if ($position === 'Manager') $xtpa->assign('slManager', 'selected');
             else if ($position === 'Marketing') $xtpa->assign('slMarketing', 'selected');
             else $xtpa->assign('slInventory', 'selected');
-            if ($level === 'Moderator') $xtpa->assign('slModerator', 'selected');
-            else $xtpa->assign('slNormal', 'selected');
+            if ($level === 'Admin') $slAdmin = 'selected';
+            else if ($level === 'Moderator') $slModerator = 'selected';
+            else $slNormal = 'selected';
         }
         if ($do_save === 1){
             $db->insert('users', $arr);
-            $f->redir("?a=users");
+            //redirect to the last page of user listing
+            $db->execSQL("SET @row_num:=0");
+            $rs = $db->fetch("SELECT *, @row_num:=@row_num+1 as nbr FROM users WHERE 1 = 1 ORDER BY id");
+            foreach ($rs as $r){
+                if($username == $r['username']){
+                    $no = $r['nbr'];
+                    break;
+                }
+            }
+            $p = ceil($no/10);
+            $f->redir("?a=users&page={$p}");
         }
     }
+    //Admin can create new user as admin as max level but moderator can only create moderator at max
+    if ($_SESSION['admin'] === 'Admin'){
+        $select = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
+                        <option value='' hidden>Level</option>
+                        <option value='Admin' {$slAdmin}>Admin</option>
+                        <option value='Moderator' {$slModerator}>Moderator</option>
+                        <option value='Normal' {$slNormal}>Normal</option>
+                    </select>";
+    }else{
+        $select = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
+                        <option value='' hidden>Level</option>
+                        <option value='Moderator' {$slModerator}>Moderator</option>
+                        <option value='Normal' {$slNormal}>Normal</option>
+                    </select>";
+    }
+    $xtpa->assign('select', $select);
     $xtpa->parse("NEW_USER");
     $content = $xtpa->text("NEW_USER");
