@@ -24,15 +24,15 @@
     </div> <!-- form-group// -->
     <table name="tblListing" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
         <tr>
-            <th>No.</th>
-            <th>ID</th>
-            <th>Image</th>
-            <th>Category</th>
+            <th style="width: 4%">No.</th>
+            <th style="width: 4%">ID</th>
+            <th style="width: 12%">Image</th>
+            <th style="width: 15%">Category</th>
             <th>Product Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
+            <th style="width: 8%">Price</th>
+            <th style="width: 8%">Quantity</th>
             <th colspan="2">Action</th>
-            <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
+            <th style="width: 2%"><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
         </tr>
         <!-- BEGIN: LS -->
         <tr>
@@ -43,8 +43,8 @@
             <td>{LS.pro_name}</td>
             <td>{LS.pro_price}</td>
             <td>{LS.pro_quantity}</td>
-            <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
-            <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
+            <td style="width: 2%"><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
+            <td style="width: 5%"><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
             <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
         </tr>
         <!-- END: LS -->

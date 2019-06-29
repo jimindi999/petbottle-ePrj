@@ -24,7 +24,7 @@
     $page = (isset($_GET['page']))?$_GET['page']:1;
     $offset = ($page - 1) * $l;
     $condition .= " ORDER BY id ASC LIMIT {$offset}, {$l} ";
-    $url = "a=categories";
+    $url = "a=products";
     //Fetch only 10 entries from DB with condition and limit as above
     $products = $db->fetch("SELECT * FROM products WHERE {$condition}");
     $pager = $f->paging($url,$t,$l,'pager', (isset($_GET['s']))?$_GET['s']:'');    
@@ -38,6 +38,7 @@
             $i++;
         }
     }
+    $xtpa->assign('page',$pager);
     $xtpl->assign('title', 'Products');
     $xtpa->parse('PRODUCTS');
     $content = $xtpa->text('PRODUCTS');

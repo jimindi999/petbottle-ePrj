@@ -54,6 +54,7 @@
                 $i++;
             }
         }
+        $xtpa->assign('page',$pager);
         $xtpl->assign("title", $cat_name);
         $xtpa->parse("CAT_PRODUCTS");
         $content = $xtpa->text("CAT_PRODUCTS");

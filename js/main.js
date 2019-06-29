@@ -221,9 +221,11 @@ function checkAll() {
 }
 
 function setLevel(_id, _no){
+    if (_no > 10) _no = _no - 10;
     var level = document.getElementById("tblAdmin").rows[_no].cells[9].children[0].value;
     var url = window.location.href;
     var s = (url.match(/(\&s\=).*?(?=($|\&))/)) ? url.match(/(\&s\=).*?(?=($|\&))/)[0] : '';
     var page = (url.match(/(\&page\=).*?(?=($|\&))/)) ? url.match(/(\&page\=).*?(?=($|\&))/)[0] : '';
-    window.location.href = "?a=edit_level" + s + page + "&id=" + _id + "&level=" + level;
+    // console.log(level);
+    window.location.href = "?a=set_level" + s + page + "&id=" + _id + "&level=" + level;
 }

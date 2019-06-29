@@ -1,3 +1,76 @@
 <!-- BEGIN: ITEM -->
-
+<div class="container">
+    <form method="POST" name="frmProfile" action="#" enctype="multipart/form-data">
+        <div class="row mt-5">
+            <div class="col-md-4 mt-5">
+                <img src="{img}" width="100%">
+            </div>
+            <div class="col-md-6 toppad">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{pro_name}</h2>
+                        <table class="table table-user-information ">
+                            <tbody>
+                                <tr>
+                                    <td>Product Name:</td>
+                                    <td>
+                                        <input type="text" class="pl-2 pr-2 w-100" name="txtName" id="pro_name" label=""
+                                            value="{pro_name}" focus />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {erName}
+                                </tr>
+                                <tr>
+                                    <td>Category:</td>
+                                    <td>
+                                        <select name="slCat" id="categories" required>
+                                            <option value="" hidden selected>Categories</option>
+                                            <!-- BEGIN: CAT_LIST-->
+                                            <option value="{LS.cat_name}" {LS.selected}>{LS.cat_name}</option>
+                                            <!-- END: CAT_LIST-->
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Price:</td>
+                                    <td>
+                                        <input type="text" class="pl-2 pr-2 w-100" name="txtPrice" id="pro_price"
+                                            label="" value="{pro_price}" focus />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity:</td>
+                                    <td>
+                                        <input type="text" class="pl-2 pr-2 w-100" name="txtQuantity" id="pro_quantity"
+                                            label="" value="{pro_quantity}" focus />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Image:</td>
+                                    <td>
+                                        <input type="file" name="imgUl">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {erImg}
+                                </tr>
+                                <tr>
+                                    <td>Document:</td>
+                                    <td>
+                                        <input type="file" name="docUl">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {erDoc}
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" class="btn btn-primary float-right mr-2" value="Save change"><span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 <!-- END: ITEM -->
