@@ -78,18 +78,18 @@
             $do_save = 0;
             $xtpa->assign("erEmail", 'Email existed');
         }
-        if ($do_save == 0){
+        if ($do_save === 0){
             $xtpa->assign("username", $username);
             $xtpa->assign("email", $email);
             $xtpa->assign("firstName", $firstName);
             $xtpa->assign("lastName", $lastName);
             $xtpa->assign("birthday", $dob);
-            if ($gender == 'Male') $xtpa->assign('slM', 'selected');
+            if ($gender === 'Male') $xtpa->assign('slM', 'selected');
             else $xtpa->assign('slF', 'selected');
-            if ($position == 'Manager') $xtpa->assign('slManager', 'selected');
-            else if ($position == 'Marketing') $xtpa->assign('slMarketing', 'selected');
+            if ($position === 'Manager') $xtpa->assign('slManager', 'selected');
+            else if ($position === 'Marketing') $xtpa->assign('slMarketing', 'selected');
             else $xtpa->assign('slInventory', 'selected');
-            if ($level == 'Moderator') $xtpa->assign('slModerator', 'selected');
+            if ($level === 'Moderator') $xtpa->assign('slModerator', 'selected');
             else $xtpa->assign('slNormal', 'selected');
         }
         if ($do_save === 1){

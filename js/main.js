@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //JS for creating new user
+    //Validate data on client before send to server (create new user)
     $("form[name=frmReg").submit(function () {
         var user = $("#user").val();
         var email = $("#email").val();
@@ -49,77 +49,104 @@ $(document).ready(function () {
             else if (fLastName == 0) errorMess("errLName", "Invalid, name must not contain special characters (except for .-' )");
             else errorMess('errLName', '');
             if (fDOB == 0) errorMess('errBirthday', 'Must be at least 18 years old');
-            else errorMess('errBirthday','');
+            else errorMess('errBirthday', '');
             return false;
         }
     })
-    $("form[name=frmProfile]").submit(function(){
+    //Validate data on client before send to server (create new product)
+    $("form[name=frmNewProduct]").submit(function () {
+        var pro_price = $("#pro_price").val();
+        var pro_quantity = $("#pro_quantity").val();
+        var fPrice = 1;
+        var fQuantity = 1;
+        if (isNumber(pro_price) != 'not'){
+            if (parseFloat(pro_price) <= 0){
+                fPrice = 0;
+            }
+        }else fPrice = 0;
+        if (isNumber(pro_quantity) == 'not' || isNumber(pro_quantity) == 'float' || parseInt(pro_quantity) < 0){
+            fQuantity = 0;
+        }
+        if (fPrice == 1 && fQuantity == 1){
+            return true;
+        }else{
+            if (fPrice == 0) errorMess('errPrice', ' *Invalid number');
+            else errorMess('errPrice', '');
+            if (fQuantity == 0) errorMess('errQuantity', ' *Invalid number');
+            else errorMess('errQuantity', '');
+            return false;
+        }
+    })
+    $("form[name=frmProfile]").submit(function () {
         var fPass = 1;
         var fPassConf = 1;
         var fEmail = 1;
         var pass = $("#pass").val();
         var passConf = $("#passConf").val();
         var email = $("#email").val();
-        if (email != ''){
-            if (!isEmail(email)){
+        if (email != '') {
+            if (!isEmail(email)) {
                 fEmail = 0;
                 errorMess('errEmail', 'Invalid, please check your Email format');
-            }else fEmail = 1;
+            } else fEmail = 1;
         }
-        if (pass != ''){
-            if (!isPass(pass)){
+        if (pass != '') {
+            if (!isPass(pass)) {
                 fPass = 0;
                 errorMess('errPass', 'Password must not be longer than 8 characters');
-            }else if (pass != passConf){
+            } else if (pass != passConf) {
                 fPass = 0;
                 errorMess("errPass", "Password and Confirmation Password does not match");
-            }else{
+            } else {
                 fPass = 1;
                 errorMess("errPass", "");
             }
         }
-        if (fEmail == 1 && fPass == 1 && fPassConf == 1){
+        if (fEmail == 1 && fPass == 1 && fPassConf == 1) {
             return true;
-        }else return false;
+        } else return false;
     })
-    $("form[name=frmReset]").submit(function(){
+    $("form[name=frmReset]").submit(function () {
         var fPass = 1;
         var fPassConf = 1;
         var pass = $("#pass").val();
         var passConf = $("#passConf").val();
-        if (pass != ''){
-            if (!isPass(pass)){
+        if (pass != '') {
+            if (!isPass(pass)) {
                 fPass = 0;
-                errorMess("errPass","Password must not be longer than 8 characters");
-            }else{
+                errorMess("errPass", "Password must not be longer than 8 characters");
+            } else {
                 fPass = 1;
-                errorMess("errPass","");
+                errorMess("errPass", "");
             }
-            if (pass != passConf){
+            if (pass != passConf) {
                 fPassConf = 0;
                 errorMess("errPassConf", "Password and Confirmation Password does not match");
-            }else{
-                fPassConf = 1;                
-                errorMess("errPassConf","");
+            } else {
+                fPassConf = 1;
+                errorMess("errPassConf", "");
             }
         }
-        if (fPass == 1 && fPassConf == 1){
+        if (fPass == 1 && fPassConf == 1) {
             return true;
-        }else return false;
+        } else return false;
     })
     //Differentiate between 2 submit buttons on the same form (search and delete)
-    $("#btnSearch, #btnDelAll").click(function(){
-        if(this.id == 'btnSearch'){
+    $("#btnSearch, #btnDelAll").click(function () {
+        if (this.id == 'btnSearch') {
             var s = $("#txtSearch").val();
-            s = s.replace(' ','+');
-            if (s != ''){
-                window.location.href = "?a=users&s="+s+"&page=1";
-            }else window.location.href = "?a=users&page=1";
+            s = s.replace(' ', '+');
+            var url = window.location.href;
+            var a = (url.match(/(a\=).*?(?=(\&|$))/)) ? url.match(/(a\=).*?(?=(\&|$))/)[0] : '';
+            var cat = (url.match(/(\&cat\=).*?(?=(\&|$))/)) ? url.match(/(\&cat\=).*?(?=(\&|$))/)[0] : '';
+            if (s != '') {
+                window.location.href = "?" + a + cat + "&s=" + s + "&page=1";
+            } else window.location.href = "?" + a + cat + "&page=1";
             return false;
-        }else{
-            if (confirm('Are you sure to delete these records?')){
+        } else {
+            if (confirm('Are you sure to delete these records?')) {
                 return true;
-            }else return false;
+            } else return false;
         }
     })
 })
@@ -148,30 +175,46 @@ function isPass(str) {
     else return false;
 }
 
+function isNumber(str) {
+    var natural = /^[0-9]+$/;
+    var integer = /^[\-\+][0-9]+$/;
+    var float = /^[\-\+]?[0-9]*(\.)[0-9]+$/;
+    var result = "not";
+    if (str.match(natural)) result = 'natural';
+    else if (str.match(float)) result = 'float';
+    else if (str.match(integer)) result = 'integer';
+    return result;
+}
+
 function errorMess(_id, _mess) {
     document.getElementById(_id).innerHTML = _mess;
 }
 
-function del(_id){
-    if (confirm('Are you sure to delete this record?')){
+function del(_id) {
+    if (confirm('Are you sure to delete this record?')) {
         var url = window.location.href;
-        var patt = /(\&s\=){1}.*$/;
-        var s = (url.match(/(\&s\=).*?(?=(\&))/))?url.match(/(\&s\=).*?(?=(\&))/)[0]:'';
-        if (s.length >0) window.location.href = "?a=delete&m=users"+s+"&id="+_id;
-        else window.location.href = "?a=delete&m=users&id="+_id;
+        //Get search key word from url
+        var s = (url.match(/(\&s\=).*?(?=($|\&))/)) ? url.match(/(\&s\=).*?(?=($|\&))/)[0] : '';
+        //Get current module key word from url so that server can know where to delete selected entry and redirect back to current page
+        var a = (url.match(/(a\=).*?(?=($|\&))/)) ? url.match(/(a\=).*?(?=($|\&))/)[0] : '';
+        //Get current category key word from url to redirect back to current page
+        var cat = (url.match(/(\&cat\=).*?(?=(\&|$))/)) ? url.match(/(\&cat\=).*?(?=(\&|$))/)[0] : '';
+        a = a.substring(1, a.len);
+        if (s.length > 0) window.location.href = "?a=delete&m" + a + cat + s + "&id=" + _id;
+        else window.location.href = "?a=delete&m" + a + cat + "&id=" + _id;
     }
 }
 
-function checkAll(){
+function checkAll() {
     var ck = $('[name="ck[]"]');
     var ckAll = $("#ckAll")[0];
-    if(ck.length > 0){
-        if(ckAll.checked == true){
-            for(i = 0; i < ck.length; i++){
+    if (ck.length > 0) {
+        if (ckAll.checked == true) {
+            for (i = 0; i < ck.length; i++) {
                 ck[i].checked = true;
             }
-        }else{
-            for(i = 0; i < ck.length; i++){
+        } else {
+            for (i = 0; i < ck.length; i++) {
                 ck[i].checked = false;
             }
         }

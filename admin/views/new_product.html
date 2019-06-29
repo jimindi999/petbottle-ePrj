@@ -1,19 +1,20 @@
 <!-- BEGIN: NEW_PRODUCT -->
 <form method="POST" action="?a=new_product" name="frmNewProduct" enctype="multipart/form-data">
-    <span>Product Name: </span><input type="text" name="txtName" required><br>
-    <span>Price: </span><input type="text" name="txtPrice" required><br>
+    <span>Product Name: </span><input type="text" name="txtName" id="pro_name" value="{pro_name}" required><span class="errorMess" id="errProduct"> {erProduct}</span><br>
+    <span>Price: </span><input type="text" name="txtPrice" id="pro_price" value="{pro_price}" required><span class="errorMess" id="errPrice"></span><br>
     <select name="slCat" id="categories" required>
         <option value="" hidden selected>Categories</option>
         <!-- BEGIN: CAT_LIST-->
         <option value="{LS.cat_name}">{LS.cat_name}</option>
         <!-- END: CAT_LIST-->
     </select><br>
-    <span>Quantity: </span><input type="text" name="txtQuantity" required><br>
-    <span>Description: </span><textarea name="description" id="description" required></textarea><br>
+    <span>Quantity: </span><input type="text" name="txtQuantity" id="pro_quantity" value="{pro_quantity}" required><span class="errorMess" id="errQuantity"></span><br>
+    <span>Description: </span><textarea name="description" id="pro_description" value="{pro_desc}" required></textarea><br>
     <!-- <script>
             CKEDITOR.replace( 'description' );
     </script> -->
-    <span>Image: </span><input type="file" name="imgUl" required><br>
+    <span>Image: </span><input type="file" name="imgUl" required><span class="errorMess" id="errImg"> {erImg}</span><br>
+    <span>Document: </span><input type="file" name="docUl" required><span class="errorMess" id="errDoc"> {erDoc}</span><br>
     <input type="submit">
 </form>
 <!-- END: NEW_PRODUCT -->
