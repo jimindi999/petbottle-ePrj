@@ -45,7 +45,6 @@
         //Fetch only 10 entries from DB with condition and limit as above
         $products = $db->fetch("SELECT * FROM products WHERE {$condition}");
         $pager = $f->paging($url,$t,$l,'pager', (isset($_GET['s']))?$_GET['s']:'');
-        echo $condition;
         $cat_name = ($db->fetch("SELECT * FROM categories WHERE id = {$cat_id}"))[0]['cat_name'];
         if (count($products) > 0){
             $i = $offset + 1;
