@@ -4,6 +4,7 @@
     if(isset($_COOKIE['user_id'])){
         $_SESSION['user_id'] = $_COOKIE['user_id'];
         $_SESSION['admin'] = $_COOKIE['admin'];
+        $_SESSION['username'] = $_COOKIE['username'];
     }
     $a = (isset($_GET['a']))?$_GET['a']:'home';
     if(isset($_SESSION['user_id'])){

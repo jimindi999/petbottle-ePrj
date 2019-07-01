@@ -44,7 +44,7 @@
             <td>{LS.select}</td>
             <td style="width: 5%">{LS.update}</td>
             <td style="width: 5%"><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
-            <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
+            <td><input type="checkbox" onclick="check(this.checked)" name="ck[]" value="{LS.id}"></td>
         </tr>
         <!-- END: LS -->
         <tfoot>

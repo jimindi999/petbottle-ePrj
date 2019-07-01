@@ -220,6 +220,11 @@ function checkAll() {
     }
 }
 
+function check(a){
+    var ckAll = $("#ckAll")[0];
+    if (a === false) ckAll.checked = false;
+}
+
 function setLevel(_id, _no){
     if (_no > 10) _no = _no - 10;
     var level = document.getElementById("tblAdmin").rows[_no].cells[9].children[0].value;

@@ -1,26 +1,28 @@
 <!-- BEGIN: ADMIN -->
 <script>
     $(document).ready(function () {
-        var str = $("#txtSearch").val();
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var userObj = JSON.parse(this.responseText);
-                var cols = document.getElementById("tblTest").rows[0].cells.length;
-                var content = document.getElementById("tblTest");
-                var len = userObj.length;
-                for (var i = 1; i < len; i++) {
-                    var row = content.insertRow(i);
-                    for (var j = 0; j < cols; j++){
-                        var cell = row.insertCell(j);
-                        cell.innerHTML = i + "." + j;
-                    }
-                }       
+        function test(){
+            var str = $("#txtSearch").val();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var userObj = JSON.parse(this.responseText);
+                    console.log(this.responseText);
+                    var cols = document.getElementById("tblTest").rows[0].cells.length;
+                    var content = document.getElementById("tblTest");
+                    var len = userObj.length;
+                    for (var i = 1; i < len; i++) {
+                        var row = content.insertRow(i);
+                        for (var j = 0; j < cols; j++){
+                            var cell = row.insertCell(j);
+                            cell.innerHTML = i + "." + j;
+                        }
+                    }       
+                }
             }
+            xhttp.open("GET", "controllers/fetch.php", true);
+            xhttp.send();
         }
-        xhttp.open("GET", "controllers/fetch.php", true);
-        xhttp.send();
-        
     })
 </script>
 <form name="frmTest" method="POST">
@@ -37,6 +39,7 @@
             <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
+    <input type="button" onclick="test()">
     <table name="tblAdmin" class="tblAdmin" border="1" cellpadding="10" cellspacing="10" id="tblTest">
         <tr>
             <th>No.</th>

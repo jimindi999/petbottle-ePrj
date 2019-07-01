@@ -126,6 +126,7 @@
                         <option value='Normal' {$slNormal}>Normal</option>
                     </select>";
     }
+    $xtpl->assign('title', 'New user');
     $xtpa->assign('select', $select);
     $xtpa->parse("NEW_USER");
     $content = $xtpa->text("NEW_USER");

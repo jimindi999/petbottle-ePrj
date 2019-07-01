@@ -16,6 +16,7 @@
                     if(isset($_POST['ckRemember'])){
                         setcookie("user_id", $user['id'], time() + 30 * 24 * 60 * 60, "/");
                         setcookie("admin", $user['admin_level'], time() + 30 * 24 * 60 *60, "/");
+                        setcookie("username", $user['username'], time() + 30 * 24 * 60 *60, "/");
                     }
                     $f->redir("index.php");
                 }else $xtpa->assign('errorMess','*Wrong password');
