@@ -1,6 +1,5 @@
 <?php
     include ("../libs/config.php");
-    //test git
     //Check is cookies existed => set session id and admin level as existed cookies
     if(isset($_COOKIE['user_id'])){
         $_SESSION['user_id'] = $_COOKIE['user_id'];
