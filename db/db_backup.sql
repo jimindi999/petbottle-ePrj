@@ -94,7 +94,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (29,'kurokeita','kuro.keita94@gmail.com','$2y$10$ut4KJ47j3qKqOf9xIs226Op8ZnRUdrhGPHU.ppnRYCqNhzmx1270G','Le Nguyen','Minh','1994-09-17','Male','Manager','Admin'),(30,'test','test@gmail.com','$2y$10$GCE2Nnpyf9ZmlxLogW7Ru.pYLIzneuwti9DWNo6eu3xJ.CpUzgVrW','Mr','Test','1999-01-01','Male','Inventory','Normal'),(31,'moderator','moderator@gmail.com','$2y$10$KF.jQynn/ONxVGRBGa6PXuOyhhgrvPPzw0OnbZXiUklpWt0heD3sC','Mr','Moderator','1995-05-11','Male','Manager','Moderator');
+INSERT INTO `users` VALUES (1,'kurokeita','kuro.keita94@gmail.com','$2y$10$Fkju/aHjWmUFha6lXGg/puuVx9D3Uy5aelYFIJ2Szz7QtMXlg7I46','Kuro','Keita','1994-09-17','Male','CEO','Admin'),(2,'test1','test@gmail.com','$2y$10$3QA2zYcT8yvnxLWbTagr2u9uQaCmKVTOFhZNJ5dznBS9emr0efIqG','Mr','Test','2000-08-12','Female','Marketing','Normal'),(3,'mrbean','bean@gmail.com','$2y$10$IbZzELEqFSPmw8eNM3T9duYl1IA735rmZc5TNCfX6NpG9JqIXp.oa','Mr','Bean','1990-09-15','Male','Inventory','Normal'),(4,'trangdinh','trangdinh@gmail.com','$2y$10$vvl9sUFnCNuYs8Y1evKe5Ot1gzYOq.K6Q8dABmY9f4VxZPlp6f5VW','Trang','Dinh','1994-04-29','Female','Manager','Moderator'),(7,'samcarter','samcarter@gmail.com','$2y$10$KuTWmXab/wGkj2Q8pnfml.jKK.tAd/aVTy/uHDmfvAQ0/MudxN9mm','Samantha','Carter','1987-01-10','Female','Marketing','Normal'),(8,'manager','manager@gmail.com','$2y$10$k.Q.sll6PasYN.WvyoPs1er93thKUHDPYnpILIY8UKNedfJ1LRgku','Mr','Manager','1996-10-10','Male','Marketing','Moderator'),(11,'administrator','admin@gmail.com','$2y$10$WGPlwF7lD8LDLpWyWNwOZeE1/9.Y5IxOiQNBzLG.QneTwGlBk7PAG','Mr','Admin','1999-09-19','Male','Manager','Admin'),(15,'teddybear','teddy@gmail.com','$2y$10$OoxKqXP/GU3qrB49E6veuuVedxx/lRPAIZm8Ja6KfbV0Ft2HnzNp6','Teddy','Bear','1999-01-01','Male','Inventory','Normal'),(18,'bot_male','bot_male@gmail.com','$2y$10$pVTa6oJA7KaBo84fcRjwWOZKbe66t.J09SS56MaKp8Zv5Tl2bdpae','Mr','Bot','1998-10-10','Male','Inventory','Normal'),(19,'tester','tester@gmail.com','$2y$10$ZNrTIS6HhtYG1ERdyIb7XelFmuF8j.YiBEqY5bvl70T22Obg505N6','Mr','Tester','1992-01-01','Male','Inventory','Normal'),(20,'new_admin','new_admin@gmail.com','$2y$10$p4FCQYOCUY.neXQvFp/JWuUQl2yuuDM2MDI8V0qY4KPRd.CoTDHdq','New','Admin','1999-01-01','Female','Manager','Moderator'),(21,'bot_female','bot_female@gmail.com','$2y$10$AGzEnjfoWPOFkM.SljFRruoV6FdtyrMjn0F0ckP9pln3BzF7PoZc.','Ms','Bot','1995-01-01','Female','Marketing','Normal'),(22,'minhlnh','minhlnh@gmail.com','$2y$10$.EnsbwJPqy3pyZ5AKfVsRurJnG4iNaoHuNlNp0T8gebgCNPzS3F2y','Minh','Le Nguyen Hoang','1994-09-17','Male','Manager','Moderator'),(23,'new_user','new_user@gmail.com','$2y$10$S9oI.3z5e/MGAb92pKBvI.dXaRtIvhaeAwAYznSKuG4xE2aJEuEz.','New','User','1998-01-01','Male','Inventory','Normal'),(24,'new_user_test','new_user_test@gmail.com','$2y$10$nHRTP3S3boslVN5YZH1Pp.ANPNw6drbqCpBTrsvLUsIxh5xLYQOua','New','User','1998-01-01','Male','Inventory','Normal');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-01 18:41:36
+-- Dump completed on 2019-06-30  9:38:30
