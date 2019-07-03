@@ -11,10 +11,10 @@
         //Below code to calculate current page of entry before delete it
         $condition = '1 = 1';
         if ($s != ''){
-            if ($m = 'users') $condition .= " AND username LIKE '{$s}' OR email LIKE '{$s}' OR firstName LIKE '{$s}' OR lastName LIKE '{$s}'  OR gender LIKE '{$s}'  OR position LIKE '{$s}' OR admin_level LIKE '{$s}'";
+            if ($m = 'users' || $m == 'user_test') $condition .= " AND username LIKE '{$s}' OR email LIKE '{$s}' OR firstName LIKE '{$s}' OR lastName LIKE '{$s}'  OR gender LIKE '{$s}'  OR position LIKE '{$s}' OR admin_level LIKE '{$s}'";
             else if($m = 'products' || $m = 'categories') $condition .= " AND pro_name like '{$s}' OR pro_price LIKE '{$s}'";
         }
-        if ($m == 'users') $table = 'users';
+        if ($m == 'users' || $m == 'user_test') $table = 'users';
         else $table = 'products';
         $rs = $db->fetch("SELECT *, @row_num:=@row_num+1 as nbr FROM {$table} WHERE {$condition} ORDER BY id");
         foreach ($rs as $r){
@@ -41,4 +41,6 @@
         $db->execSQL($sql);
         if($cat == '') $f->redir("?a={$m}&s={$s}&page={$p}");
         else $f->redir("?a={$m}&cat={$cat}&s={$s}&page={$p}");
+        // $url = "?a={$m}&s={$s}&page=";
+        // echo $url."<br>".$id;
     }

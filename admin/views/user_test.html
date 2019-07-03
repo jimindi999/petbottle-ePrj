@@ -1,80 +1,89 @@
 <!-- BEGIN: ADMIN -->
 <script>
-    $(document).ready(function () {
-        function test(){
-            var str = $("#txtSearch").val();
+        function test(search){
+            var str = search.value;
+            str = str.replace(' ', '+');
             var xhttp = new XMLHttpRequest();
+            var tbl_inner = new Array();
+            var text = '<caption>List of users</caption><thead><tr><th style="width: 3.5%">No.</th><th style="width: 3.5%">ID</th><th style="width: 11%">Username</th><th style="width: 17.5%">Email</th><th style="width: 10%">First Name</th><th style="width: 10%">Last Name</th><th style="width: 6%">Gender</th><th style="width: 7.5%">Position</th><th style="width: 8%">Date of Birth</th><th style="width: 10%">User Level</th><th colspan="2">Action</th><th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th></tr></thead>';
+            tbl_inner.push(text);
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    var userObj = JSON.parse(this.responseText);
-                    console.log(this.responseText);
-                    var cols = document.getElementById("tblTest").rows[0].cells.length;
-                    var content = document.getElementById("tblTest");
-                    var len = userObj.length;
-                    for (var i = 1; i < len; i++) {
-                        var row = content.insertRow(i);
-                        for (var j = 0; j < cols; j++){
-                            var cell = row.insertCell(j);
-                            cell.innerHTML = i + "." + j;
-                        }
-                    }       
+                    var user_JSON = JSON.parse(this.responseText);
+                    var len = user_JSON.length;
+                    for (var i = 0; i < len; i++) {
+                        var nbr = '<td>' + (i + 1) + '</td>';
+                        var id = '<td>' + user_JSON[i]['id'] + '</td>';
+                        var username = '<td>' + user_JSON[i]['username'] + '</td>';
+                        var email = '<td>' + user_JSON[i]['email'] + '</td>';
+                        var firstName = '<td>' + user_JSON[i]['firstName'] + '</td>';
+                        var lastName = '<td>' + user_JSON[i]['lastName'] + '</td>';
+                        var gender = '<td>' + user_JSON[i]['gender'] + '</td>';
+                        var position = '<td>' + user_JSON[i]['position'] + '</td>';
+                        var dob = '<td>' + user_JSON[i]['dob'] + '</td>';
+                        var admin_level = '<td>' + user_JSON[i]['admin_level'] + '</td>';
+                        var update = '<td>' + "<a href='javascript:void()' onclick='setLevel(" + user_JSON[i]['id'] + i + ")'>Update</a>" + '</td>';
+                        var del = "<td style='width: 5%''><a href='javascript:void(0)'' onclick='del(" + user_JSON[i]['id'] + ")'>Delete</a></td>";
+                        var check = '<td>' + "<input type='checkbox' onclick='check(this.checked)' name='ck[]' value=" + user_JSON[i]['id'] + ">" + '</td>';
+                        var text = '<tr>' + nbr + id + username + email + firstName + lastName + gender + position + dob + admin_level + update + del + check + '</tr>';
+                        tbl_inner.push(text);
+                    }
+                    var a = tbl_inner.join();
+                    $("#tblAdmin").html(a);
                 }
             }
-            xhttp.open("GET", "controllers/fetch.php", true);
+            xhttp.open("GET", "controllers/fetch.php?s=" + str, true);
             xhttp.send();
         }
-    })
 </script>
-<form name="frmTest" method="POST">
+<form name="frmListing" method="POST">
     <div class="form-group input-group">
         <a class="btn btn-success" href="?a=new_user" style="margin-right: 20px">Create new user</a>
         <input id="txtSearch" name="search" class="col-7" type="text"
-            placeholder="Search: username, name, email, gender" value="{search}" onkeyup="ajaxSearchTest(this.value)">
+            placeholder="Search: username, name, email, gender" value="{search}" onkeyup="test(this)">
         <div class="input-group-prepend">
             <button id="btnSearch" type="submit" name="btnSearch" class="btn btn-primary"> <i
                     class="fas fa-search"></i></button>
         </div>
-        <span id="test"></span>
         <div class="delAll">
             <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
-    <input type="button" onclick="test()">
-    <table name="tblAdmin" class="tblAdmin" border="1" cellpadding="10" cellspacing="10" id="tblTest">
-        <tr>
-            <th>No.</th>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Position</th>
-            <th>Date of Birth</th>
-            <th>Level</th>
-            <th colspan="2">Action</th>
-            <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
-        </tr>
-        <!-- BEGIN: LS -->
-        <tbody>
-
-
+    <input type="button" value="ajax search" onclick="test()">
+    <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
+        <caption>List of users</caption>
+        <thead>
             <tr>
-                <td>{LS.no}</td>
-                <td>{LS.id}</td>
-                <td>{LS.username}</td>
-                <td>{LS.email}</td>
-                <td>{LS.firstName}</td>
-                <td>{LS.lastName}</td>
-                <td>{LS.gender}</td>
-                <td>{LS.position}</td>
-                <td>{LS.dob}</td>
-                <td>{LS.admin_level}</td>
-                <td><a href="?a=admin_edit&id={LS.id}">Edit</a></td>
-                <td><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
-                <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
+                <th style="width: 3.5%">No.</th>
+                <th style="width: 3.5%">ID</th>
+                <th style="width: 11%">Username</th>
+                <th style="width: 17.5%">Email</th>
+                <th style="width: 10%">First Name</th>
+                <th style="width: 10%">Last Name</th>
+                <th style="width: 6%">Gender</th>
+                <th style="width: 7.5%">Position</th>
+                <th style="width: 8%">Date of Birth</th>
+                <th style="width: 10%">User Level</th>
+                <th colspan="2">Action</th>
+                <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
             </tr>
-        </tbody>
+        </thead>
+        <!-- BEGIN: LS -->
+        <tr>
+            <td>{LS.no}</td>
+            <td>{LS.id}</td>
+            <td>{LS.username}</td>
+            <td>{LS.email}</td>
+            <td>{LS.firstName}</td>
+            <td>{LS.lastName}</td>
+            <td>{LS.gender}</td>
+            <td>{LS.position}</td>
+            <td>{LS.dob}</td>
+            <td>{LS.select}</td>
+            <td style="width: 5%">{LS.update}</td>
+            <td style="width: 5%"><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
+            <td><input type="checkbox" onclick="check(this.checked)" name="ck[]" value="{LS.id}"></td>
+        </tr>
         <!-- END: LS -->
         <tfoot>
             <tr>
