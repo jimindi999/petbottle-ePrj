@@ -1,0 +1,53 @@
+<!-- BEGIN: ADD_SONG -->
+<div class="frmAddSong">
+    <form method="POST" name="frmAddSong" enctype="multipart/form-data"> 
+        <div class="head_song"><a>Add Song</a></div>
+        <table>
+            <tr>
+                <th>Name of the song:</th>
+                <td> 
+                    <input type="text" name="txtNameSong" value="{nameSong}" placeholder="Enter the song name!" /><br>
+                    <span class="mess">{mess_name_song}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>Singer:</th>
+                <td>
+                    <input type="text" name="txtSinger" value="{nameSinger}" placeholder="Enter the name Singer!" /><br>
+                    <span class="mess">{mess_name_singer}<span> 
+                </td>
+            </tr>
+            <tr>
+                <th>Genre:</th>
+                <td>
+                    <select name="lsGenre">
+                        <option value="" hidden selected>Unknown</option>
+                        <!-- BEGIN: LIST_CAT-->
+                        <option value="{LS.cat_name}">{LS.cat_name}</option>
+                        <!-- END: LIST_CAT-->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>File:</th>
+                <td>
+                    <input type="file" name="txtMp3" />
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Description:</th>
+                <td>
+                    <textarea name="txtDes" style="width: 350px; height: 150px;">{song_des}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="sbSong" value="Submit" />
+                </td>
+            </tr>
+            <tr></tr>
+        </table>
+    </form>
+</div>
+<!-- END: ADD_SONG -->
