@@ -1,27 +1,27 @@
 <!-- BEGIN: ADMIN -->
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         test(0);
-        $('#search, #delAll').click(function(){
-            if(this.id == 'search'){
+        $('#search, #delAll').click(function () {
+            if (this.id == 'search') {
                 console.log('aloha');
                 return false;
-            }
-            else{
+            } else {
                 if (confirm('Are you sure to delete these records?')) {
                     return true;
                 } else return false;
             }
         })
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             var position = $(window).scrollTop();
             var bottom = $(document).height() - $(window).height();
-            if(position == bottom){
+            if (position == bottom) {
                 var row = $('#tblAdmin td').closest('tr').length;
                 test(row);
             }
         })
     })
+
     function test(row) {
         var str = $('#txtSearch').val();
         var tbl_inner = new Array();
@@ -64,8 +64,10 @@
         });
         return false;
     }
-    function cleanup(){
-        var text = '<caption>List of users</caption><thead><tr><th style="width: 3.5%">No.</th><th style="width: 3.5%">ID</th><th style="width: 11%">Username</th><th style="width: 17.5%">Email</th><th style="width: 10%">First Name</th><th style="width: 10%">Last Name</th><th style="width: 6%">Gender</th><th style="width: 7.5%">Position</th><th style="width: 8%">Date of Birth</th><th style="width: 10%">User Level</th><th colspan="2">Action</th><th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th></tr></thead>';
+
+    function cleanup() {
+        var text =
+            '<caption>List of users</caption><thead><tr><th style="width: 3.5%">No.</th><th style="width: 3.5%">ID</th><th style="width: 11%">Username</th><th style="width: 17.5%">Email</th><th style="width: 10%">First Name</th><th style="width: 10%">Last Name</th><th style="width: 6%">Gender</th><th style="width: 7.5%">Position</th><th style="width: 8%">Date of Birth</th><th style="width: 10%">User Level</th><th colspan="2">Action</th><th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th></tr></thead>';
         $("#tblAdmin").html(text);
     }
 </script>
