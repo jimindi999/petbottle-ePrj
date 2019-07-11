@@ -14,6 +14,10 @@
     </div> <!-- form-group// -->
     <table name="tblListing" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10"
         cellspacing="10">
+        <caption>
+            {page}
+            List of products
+        </caption>
         <tr>
             <th style="width: 3.5%">No.</th>
             <th style="width: 3.5%">ID</th>
@@ -38,11 +42,6 @@
             <td><input type="checkbox" name="ck[]" value="{LS.id}"></td>
         </tr>
         <!-- END: LS -->
-        <tfoot>
-            <tr>
-                <td colspan="10">{page}</td>
-            </tr>
-        </tfoot>
     </table>
 </form>
 <!-- END: PRODUCTS -->

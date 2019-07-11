@@ -20,10 +20,12 @@
             $xtpl->assign('navbar',$navbar);
             if(isset($content)) $xtpl->assign('content',$content);
         }
-        $xtpl -> assign("baseUrl", $baseUrl);
-        $xtpl -> parse("ADMIN");
-        $xtpl -> out("ADMIN");
-    }else if($a === 'forgot_password'){
+        include("controllers/footer.php");
+        $xtpl->assign('footer', $footer);
+        $xtpl->assign("baseUrl", $baseUrl);
+        $xtpl->parse("ADMIN");
+        $xtpl->out("ADMIN");
+    }else if($a == 'forgot_password'){
         include ("controllers/forgot_password.php");
     }else{
         include ("controllers/login.php");
