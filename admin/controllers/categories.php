@@ -34,7 +34,7 @@
             $xtpa->assign('search',$search_val);
         }
         //Fetch all entries from DB with condition created above
-        $products = $db->fetch("SELECT * FROM products WHERE {$condition}");
+        $products = $db->fetch("SELECT * FROM vw_products WHERE {$condition}");
         $t = count($products);
         $l = 10;
         $page = (isset($_GET['page']))?$_GET['page']:1;
@@ -43,8 +43,8 @@
         $condition .= " ORDER BY id ASC LIMIT {$offset}, {$l} ";
         $url = "a=categories&cat={$cat_id}";
         //Fetch only 10 entries from DB with condition and limit as above
-        $products = $db->fetch("SELECT * FROM products WHERE {$condition}");
-        $pager = $f->paging($url,$t,$l,'pager', (isset($_GET['s']))?$_GET['s']:'');
+        $products = $db->fetch("SELECT * FROM vw_products WHERE {$condition}");
+        $pager = $f->paging($url,$t,$l, (isset($_GET['s']))?$_GET['s']:'');
         $cat_name = ($db->fetch("SELECT * FROM categories WHERE id = {$cat_id}"))[0]['cat_name'];
         if (count($products) > 0){
             $i = $offset + 1;

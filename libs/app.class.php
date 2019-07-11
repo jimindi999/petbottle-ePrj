@@ -9,14 +9,53 @@
 		public function redir($url){
 			header("Location:{$url}");
 		}
-		public function paging($url, $t, $l, $css, $s){
-			$pi = '';
+		public function paging($url, $t, $l, $s){
 			$current = (isset($_GET['page']))?$_GET['page']:1;
-			for($i=ceil($t/$l); $i >= 1 ; $i--){
+			$previous = $current - 1;
+			$next = $current + 1;
+			if ($current == 1){
+				$pi = "<div class='float-right'>
+							<nav aria-label='Page navigation example' pull-right>
+								<ul class='pagination'>
+									<li class='page-item'>
+										<a class='page-link' href='#' aria-label='Previous'>
+											<span aria-hidden='true'>&laquo;</span>
+										</a>
+									</li>";
+			}else{
+				$pi = "<div class='float-right'>
+							<nav aria-label='Page navigation example' pull-right>
+								<ul class='pagination'>
+									<li class='page-item'>
+										<a class='page-link' href='?{$url}&s={$s}&view={$l}&page={$previous}' aria-label='Previous'>
+											<span aria-hidden='true'>&laquo;</span>
+										</a>
+									</li>";
+			}
+			for($i=1; $i <= ceil($t/$l) ; $i++){
 				if($i != $current){
-					if ($s != '') $pi .= "<a href='?{$url}&s={$s}&view={$l}&page={$i}' class='{$css}'>{$i}</a>";
-					else $pi .= "<a href='?{$url}&page={$i}' class='{$css}'>{$i}</a>";
-				}else $pi .= "<span class='{$css}'>{$i}</span>";
+					if ($s != '') $pi .= "<li class='page-item'><a href='?{$url}&s={$s}&view={$l}&page={$i}' class='page-link'>{$i}</a></li>";
+					else $pi .= "<li class='page-item'><a href='?{$url}&page={$i}' class='page-link'>{$i}</a></li>";
+				}else $pi .= "<li class='page-item'><span class='page-link'>{$i}</span></li>";
+			}
+			if ($current == ceil($t/$l)){
+				$pi .= "<li class='page-item'>
+							<a class='page-link' href='#' aria-label='Next'>
+								<span aria-hidden='true'>&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				</div>";
+			}else{
+				$pi .= "<li class='page-item'>
+							<a class='page-link' href='?{$url}&s={$s}&view={$l}&page={$next}' aria-label='Next'>
+								<span aria-hidden='true'>&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				</div>";
 			}
 			return $pi;
 		}

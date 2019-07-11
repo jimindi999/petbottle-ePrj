@@ -132,6 +132,8 @@ $(document).ready(function () {
         } else return false;
     })
     //Differentiate between 2 submit buttons on the same form (search and delete)
+    //btnSearch need to be a submit button to be able to use enter to query search
+    //btnDelAll need to be a submit button to be able to POST all ck[id] to sv
     $("#btnSearch, #btnDelAll").click(function () {
         if (this.id == 'btnSearch') {
             var s = $("#txtSearch").val();

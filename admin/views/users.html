@@ -12,8 +12,28 @@
             <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
-    <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1" cellpadding="10" cellspacing="10">
-        <caption>List of users</caption>
+    <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1"
+        cellpadding="10" cellspacing="10">
+        <caption>
+            <!-- <div class="float-right">
+                <nav aria-label="Page navigation example" pull-right>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li> -->
+                        {page}
+                        <!-- <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> -->
+            List of users
+        </caption>
         <thead>
             <tr>
                 <th style="width: 3.5%">No.</th>
@@ -47,11 +67,7 @@
             <td><input type="checkbox" onclick="check(this.checked)" name="ck[]" value="{LS.id}"></td>
         </tr>
         <!-- END: LS -->
-        <tfoot>
-            <tr>
-                <td colspan="13">{page}</td>
-            </tr>
-        </tfoot>
     </table>
+
 </form>
 <!-- END: ADMIN -->

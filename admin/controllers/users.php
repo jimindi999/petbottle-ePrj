@@ -33,7 +33,7 @@
         $url = 'a=users';
         //Fetch only 10 entries from DB with condition and limit as above
         $user = $db->fetch("SELECT * FROM users WHERE {$condition}");
-        $pager = $f->paging($url,$t,$l,'pager', (isset($_GET['s']))?$_GET['s']:'');
+        $pager = $f->paging($url,$t,$l, (isset($_GET['s']))?$_GET['s']:'');
         if (count($user) > 0){
             $i = $offset + 1;
             foreach($user as $r){

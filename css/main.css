@@ -83,7 +83,7 @@ form[name=frmListing] {
     text-align: center;
 }
 
-.tblListing tr td a {
+.tblListing tbody tr td a {
     color: var(--orange);
 }
 

@@ -1,53 +1,73 @@
-<!-- BEGIN: ADD_SONG -->
-<div class="frmAddSong">
-    <form method="POST" name="frmAddSong" enctype="multipart/form-data"> 
-        <div class="head_song"><a>Add Song</a></div>
-        <table>
+<!-- BEGIN: ADMIN -->
+<form name="frmListing" method="POST">
+        <div class="form-group input-group">
+            <a class="btn btn-success" href="?a=new_user" style="margin-right: 20px">Create new user</a>
+            <input id="txtSearch" name="search" class="col-7" type="text"
+                placeholder="Search: username, name, email, gender" value="{search}">
+            <div class="input-group-prepend">
+                <button id="btnSearch" type="submit" name="btnSearch" class="btn btn-primary"> <i
+                        class="fas fa-search"></i></button>
+            </div>
+            <div class="delAll">
+                <input id="btnDelAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
+            </div>
+        </div> <!-- form-group// -->
+        <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1"
+            cellpadding="10" cellspacing="10">
+            <caption>
+                <!-- <div class="float-right">
+                    <nav aria-label="Page navigation example" pull-right>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li> -->
+                            {page}
+                            <!-- <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> -->
+                List of users
+            </caption>
+            <thead>
+                <tr>
+                    <th style="width: 3.5%">No.</th>
+                    <th style="width: 3.5%">ID</th>
+                    <th style="width: 11%">Username</th>
+                    <th style="width: 17.5%">Email</th>
+                    <th style="width: 10%">First Name</th>
+                    <th style="width: 10%">Last Name</th>
+                    <th style="width: 6%">Gender</th>
+                    <th style="width: 7.5%">Position</th>
+                    <th style="width: 8%">Date of Birth</th>
+                    <th style="width: 10%">User Level</th>
+                    <th colspan="2">Action</th>
+                    <th><input type="checkbox" name="ckAll" id="ckAll" value="" onclick="checkAll()"></th>
+                </tr>
+            </thead>
+            <!-- BEGIN: LS -->
             <tr>
-                <th>Name of the song:</th>
-                <td> 
-                    <input type="text" name="txtNameSong" value="{nameSong}" placeholder="Enter the song name!" /><br>
-                    <span class="mess">{mess_name_song}</span>
-                </td>
+                <td>{LS.no}</td>
+                <td>{LS.id}</td>
+                <td>{LS.username}</td>
+                <td>{LS.email}</td>
+                <td>{LS.firstName}</td>
+                <td>{LS.lastName}</td>
+                <td>{LS.gender}</td>
+                <td>{LS.position}</td>
+                <td>{LS.dob}</td>
+                <td>{LS.select}</td>
+                <td style="width: 5%">{LS.update}</td>
+                <td style="width: 5%"><a href="javascript:void(0)" onclick="del({LS.id})">Delete</a></td>
+                <td><input type="checkbox" onclick="check(this.checked)" name="ck[]" value="{LS.id}"></td>
             </tr>
-            <tr>
-                <th>Singer:</th>
-                <td>
-                    <input type="text" name="txtSinger" value="{nameSinger}" placeholder="Enter the name Singer!" /><br>
-                    <span class="mess">{mess_name_singer}<span> 
-                </td>
-            </tr>
-            <tr>
-                <th>Genre:</th>
-                <td>
-                    <select name="lsGenre">
-                        <option value="" hidden selected>Unknown</option>
-                        <!-- BEGIN: LIST_CAT-->
-                        <option value="{LS.cat_name}">{LS.cat_name}</option>
-                        <!-- END: LIST_CAT-->
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>File:</th>
-                <td>
-                    <input type="file" name="txtMp3" />
-                </td>
-            </tr>
-            
-            <tr>
-                <th>Description:</th>
-                <td>
-                    <textarea name="txtDes" style="width: 350px; height: 150px;">{song_des}</textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" name="sbSong" value="Submit" />
-                </td>
-            </tr>
-            <tr></tr>
+            <!-- END: LS -->
         </table>
+    
     </form>
-</div>
-<!-- END: ADD_SONG -->
+    <!-- END: ADMIN -->
