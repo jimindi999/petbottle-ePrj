@@ -2,6 +2,13 @@
 <script>
     $(document).ready(function () {
         test(0);
+        $(document).ajaxStart(function(){
+            $("#wait").css("display", "block");
+            console.log('abc');
+          });
+          $(document).ajaxComplete(function(){
+            $("#wait").css("display", "none");
+          });
         $('#search, #delAll').click(function () {
             if (this.id == 'search') {
                 console.log('aloha');
@@ -84,7 +91,6 @@
             <input id="delAll" type="submit" name="btnDel" class="btn btn-danger delAll" value="Delete">
         </div>
     </div> <!-- form-group// -->
-    <input type="button" value="ajax search" onclick="test()">
     <table name="tblAdmin" id="tblAdmin" class="table table-bordered table-dark table-hover tblListing" border="1"
         cellpadding="10" cellspacing="10">
         <caption>List of users</caption>
@@ -105,5 +111,6 @@
             </tr>
         </thead>
     </table>
+    <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;left:50%;padding:2px;"><img src='resources/spinning.gif' width="64" height="64" /></div>
 </form>
 <!-- END: ADMIN -->
