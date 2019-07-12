@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> OceanGate</title>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- add link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
+<script src="../js/owl.carousel.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css aM/style.css">
+
+
+
+<script type="text/javascript">
+	
+$(document).ready(function() {
+    $('a#login-window').click(function() {
+        //lấy giá trị thuộc tính href - chính là phần tử "#login-box"
+        var loginBox = $(this).attr('href');
+ 
+        //cho hiện hộp đăng nhập trong 300ms
+        $(loginBox).fadeIn(300);
+ 
+        // thêm phần tử id="over" vào sau body
+        $('body').append('<div id="over">');
+        $('#over').fadeIn(300);
+ 
+        return false;
+ });
+ 
+ // khi click đóng hộp thoại
+ $(document).on('click', "a.close, #over", function() {
+       $('#over, .login').fadeOut(300 , function() {
+           $('#over').remove();
+       });
+      return false;
+ });
+});
+
+</script>
+
+
+
+</head>
+<body>
+	
+	<thead>
+		<div class="container-fluid" id="thead_mid_nav" >
+			<div class="row" id="thead_mid_nav_option" >
+				<div class="col-sm-offset-1 col-sm-3">
+					<img src="../img anh MInh/logo/logo aptech.png" width=200 height="80">
+				</div>
+				<div class="col-sm-5" style="margin-top: 20px;">
+				    <form method="post">
+					    	<div class="row">
+						    	<div class="input-group col-sm-10" >
+						    		<input type="text" class="form-control" id="search" placeholder="Bạn cần gì hôm  nay?" name="txtSearch">
+							      	<span class="input-group-btn" >
+							      		<button type="submit" class="btn btn-default ">
+							      			<i class="fa fa-search"></i> Tìm Kiếm
+							      		</button>
+							      	</span>							      		
+					    		</div>
+					    	</div>
+				    </form>     
+				</div>
+				<div class="col-sm-3" style="margin-top: 20px;">
+					<a  id="login-window"  href="#login-box"> <span class="glyphicon glyphicon-share" style="font-size: 25px">Login</span></a>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+		<div class="container-fluid" id="thead_bot_nav">
+			<div class="container" id="thead_bot_nav_option">
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="col-sm-10">
+					<div class="w3-bar "> 
+						
+						    <a href="#" class="w3-bar-item w3-button">
+						    	<i class='fas fa-home' style='font-size:15px;color:white'></i>Home
+								
+						    </a>
+						    <a href="category/category.html" class="w3-bar-item w3-button">Category</a>
+						    <div class="w3-dropdown-hover">
+						      <a href="#" class="w3-button">Products <i class="fa fa-angle-down"></i></a>
+						      <div class="w3-dropdown-content w3-bar-block w3-card-4" id="thead_bot_nav_option_pro">
+						      	<div class="col-sm-6" style="width: 200px">
+						      		<a href="#" class="w3-bar-item w3-button"> Chất Liệu Đồng </a>
+							        <a href="#" class="w3-bar-item w3-button">Chất Liệu Chì</a>
+							        <a href="#" class="w3-bar-item w3-button">NHôm</a>
+							        <a href="#" class="w3-bar-item w3-button">gang</a>
+						      	</div>
+						        
+						      	<div class="col-sm-6" style="width: 200px">
+						      		<a href="#" class="w3-bar-item w3-button">sắt</a>
+							        <a href="#" class="w3-bar-item w3-button">nhựa</a>
+							        <a href="#" class="w3-bar-item w3-button">chai </a>
+							        <a href="#" class="w3-bar-item w3-button">lọ</a>
+						      	</div>
+
+						      </div>
+						    </div>
+
+							<a href="#" class="w3-bar-item w3-button">About Us</a>
+						</div>
+						
+					</div>
+					<div class="col-sm-2" id="buy">
+							<a class="" href="Giỏ Hàng/gioHang.html"><i class='fas fa-cart-plus' style="font-size: 18px; margin-top: 5px "></i> Giỏ Hàng</a>
+					</div>
+
+				
+			</div>	  
+		</div>		<br>	
+	</thead>
+
+
+	<tbody>
+		<div class="jumbotron">
+			<div class="container" style="margin-top: -30px;">
+
+<!-- login -->
+					<div class="col-sm-offset-2 col-sm-8">
+			<div class="login" id="login-box">Login
+ 
+				 <!-- <a class="close" href="#"><img class="img-close" title="Close Window" alt="Close" src="close.png" /></a> -->
+				
+					<form class="login-content" method="post">
+						<div class="col-sm-7">
+					<label for="username">User Name:</label>
+						<div class=" input-group col-sm-11">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="username"  class="form-control" type="text" autocomplete="on" name="username" placeholder="Username" value="" />
+						</div>
+						
+					<br><br>
+
+					<label for="password">Password:</label>
+						<div class="input-group col-sm-11">
+						
+							<span class="input-group-addon"><i class="fa fa-key" style="font-size:16px"></i></span>
+							<input id="password" class="form-control" type="password" name="password" placeholder="Password" value="" />
+					
+						</div>
+					
+					<br>
+					<div class="col-sm-6">
+						<a class="forgot" href="#"><span style="font-size: 12px">Forgot password?</span></a>
+					</div>
+					<div class="col-sm-6">
+						<span style="font-size: 12px">New User?</span><a class="forgot" href="#"><span style="font-size: 12px">Register here</span></a>
+					</div>
+				</div>
+				
+					<br>
+					<div class="col-sm-5">
+						<button class="login_button col-sm-12" class="button submit-button" type="button">Đăng nhập</button>
+
+					<br><br><br><br>
+					<div>
+						Or Login with: 
+						<a href="#"><img src="../img/slide header/Facebook-logo200.png" width="30" height="30"></a>
+						<a href="#"><img src="../img/slide header/Google-Plus-Icon.png" width="30" height="30"></a>
+						<a href="#"><img src="../img/slide header/twitter.png" width="30" height="30"></a>		
+					</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+				
+				<div class="col-sm-4" style="border: 1px solid black">
+					<p style="text-align: center;">GIỚI THIỆU</p>
+					<p>............................................</p>
+				</div>
+
+				<div class="col-sm-8">
+					<div id="myCarousel" class="carousel slide " data-ride="carousel">
+						<ol class="carousel-indicators">
+						    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					    	<li data-target="#myCarousel" data-slide-to="1"></li>
+						    <li data-target="#myCarousel" data-slide-to="2"></li>
+						    <li data-target="#myCarousel" data-slide-to="3"></li>
+						    <li data-target="#myCarousel" data-slide-to="4"></li> 
+						</ol>
+						<div class="carousel-inner" style="height: 385px">
+							<div class="item active">
+								<div>
+									<a href="detail pro/details.html"><img src="../img/slide header/nội thất 1.jpg" alt="picture" id="tbody_carousel_slide_picture"> </a>
+								</div>
+											
+							</div>
+							<div class="item">
+							 	<div>
+							 		<a href="detail pro/details.html"><img src="../img/slide header/nội thất 3.jpg" alt="picture" class="pictet"id="tbody_carousel_slide_picture"> </a>
+							 	</div>     
+								
+						    </div>
+						    <div class="item">
+							 	<div>
+							 		<a href="detail pro/details.html"><img src="../img/slide header/nội thất 6.jpg" alt="picture" class="pictet"> </a>
+							 	</div>     
+								
+						    </div>
+						    <div class="item">
+							 	<div>
+							 		<a href="detail pro/details.html"><img src="../img/slide header/nội thất 15.jpg" alt="picture" id="tbody_carousel_slide_picture"> </a>
+							 	</div>     
+								
+						    </div>
+						    <div class="item">
+							 	<div>
+							 		<a href="detail pro/details.html"><img src="../img/slide header/nội thất 5.jpg" alt="picture" id="tbody_carousel_slide_picture"> </a>
+							 	</div>     
+								
+						    </div>
+						</div>
+						<a class="left carousel-control" href="#myCarousel"  data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" ></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel"  data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+
+					</div>
+				</div>
+				<br>
+				<div>
+						<p>CÁC MẶT HÀNG CHÍNH</p>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+						<div id="zoom" class="col-sm-4" >
+							<a href="detail pro/details.html">
+								<img  src="../img/san pham/ram.jpg" width="260" height="200">
+								<div style="text-align: center;">
+									<span>RAM GSKill 2Gb DDR2 800</span><br>
+									<span>100.000vnd</span>
+									<span  style=" text-decoration: line-through; font-size: 11px" > 150.000vnd</span><br>
+								</div><br>
+							</a>
+							<button type="button" class="btn btn-primary col-sm-offset-3">Mua Ngay</button>
+						</div>
+
+					</div>
+
+			</div>
+		</div>
+	</tbody>
+
+
+
+
+
+
+
+	<tfoot>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<style type="text/css">
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+
+
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class='fas fa-angle-up' style='font-size:24px'></i>
+
+		</button>
+
+
+
+		<div class="container-fluid" id="tfoot" style="background-color: #4F4F4F; color: white; height: 250px;">
+			<div class="container" id="tfoot_contain">
+				<div class="col-sm-3">
+					<p><h4>LIÊN HỆ VỚI ANH MINH</h4></a></p>
+					<p><a href="#">Thứ 2 đến CN: 9h - 18h (Hotline), 7h - 22h (chat trực tuyến)</a></p>
+					<p><a href="#">Trung tâm hỗ trợ</a></p>
+					<p><a href="#">Hướng dẫn đặt hàng</a></p>
+					<p><a href="#">Chính sách hàng nhập khẩu</a></p>
+					<p><a href="#">Hướng dẫn đổi trả hàng</a></p>
+
+				</div>
+				<div class="col-sm-3">
+					<p><h4>ANH MINH VIỆT NAM</h4></a></p>
+					<p><a href="#">Về OceanGate Việt Nam</a></p>
+					<p><a href="#">Tuyển dụng</a></p>
+					<p><a href="#">Chính sách bảo mật</a></p>
+					<p><a href="#">Điều khoản mua bán hàng hóa</a></p>
+					
+				</div>
+
+				<div class="col-sm-3" id="tfoot_column_3rd">
+					<p><h4>KẾT NỐI VỚI CHÚNG TÔI</h4></a></p>
+						<a href="#"><img src="../img/slide header/Facebook-logo200.png" width="30" height="30"></a>
+						<a href="#"><img src="../img/slide header/zalo.jpg" width="30" height="30"></a>	
+						<a href="#"><img src="../img/slide header/youtube.jpg" width="30" height="30"></a>		
+						<a href="#"><img src="../img/slide header/instagram.jpg" width="30" height="30"></a>
+						<a href="#"><img src="../img/slide header/twitter.png" width="30" height="30"></a>					
+					
+				</div>
+				<div class="col-sm-3">
+					<p><h4 style="text-align: center;">CHỨNG NHẬN</h4></a></p>
+					<div class="col-sm-5">						
+						<p><a href="#"><img src="../img/slide header/chứng nhận 1.png" width="70" height="70"></a></p>
+						
+					</div>
+					<div class="col-sm-7">
+						<p><img src="../img/slide header/dathongbao.png" width="120" height="40"></p>
+						<p><img src="../img/slide header/dadangky.png" width="120" height="40"></p>
+						<p><img src="../img/slide header/camket.png" width="120" height="40"></p>
+					</div>
+				
+				</div>
+			</div>
+
+			<!-- <div class="container"> -->
+				<div class="col-sm-3">
+					<h4>CÁCH THỨC THANH TOÁN: </h4>
+				</div>
+				<div class="col-sm-8" id="tfoot_column_3rd">
+					<a href="#"><img src="../img/slide header/visa1.png" width="70" height="40"></a>
+					<a href="#"><img src="../img/slide header/mastercard.png" width="70" height="40"></a>
+					<a href="#"><img src="../img/slide header/jcb.png" width="80" height="40"></a>
+					<a href="#"><img src="../img/slide header/PayPal.png" width="80" height="40"></a>
+					
+				</div>
+			</div>		
+		</div>
+
+	</tfoot>
+</body>
+</html>

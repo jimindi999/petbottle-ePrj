@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<title> OceanGate</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- add link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="../../css aM/style.css">
+
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+<body>
+	
+	<thead>
+		<div class="container-fluid" id="thead_mid_nav" >
+			<div class="row" id="thead_mid_nav_option" >
+				<div class="col-sm-offset-1 col-sm-3">
+					<img src="../img anh MInh/logo/logo aptech.png" width=200 height="80">
+				</div>
+				<div class="col-sm-5" style="margin-top: 20px;">
+				    <form method="post">
+					    	<div class="row">
+						    	<div class="input-group col-sm-10" >
+						    		<input type="text" class="form-control" id="search" placeholder="Bạn cần gì hôm  nay?" name="txtSearch">
+							      	<span class="input-group-btn" >
+							      		<button type="submit" class="btn btn-default ">
+							      			<i class="fa fa-search"></i> Tìm Kiếm
+							      		</button>
+							      	</span>							      		
+					    		</div>
+					    	</div>
+				    </form>     
+				</div>
+				<div class="col-sm-3" style="margin-top: 20px;">
+					<a  id="login-window"  href="#login-box"> <span class="glyphicon glyphicon-share" style="font-size: 25px">Login</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="thead_bot_nav">
+			<div class="container" id="thead_bot_nav_option">
+				<div class="col-sm-10">
+					<div class="w3-bar "> 
+						
+						    <a href="#" class="w3-bar-item w3-button">
+						    	<i class='fas fa-home' style='font-size:15px;color:white'></i>Home
+								
+						    </a>
+						    <a href="#" class="w3-bar-item w3-button">Category</a>
+						    <div class="w3-dropdown-hover">
+						      <a href="#" class="w3-button">Products <i class="fa fa-angle-down"></i></a>
+						      <div class="w3-dropdown-content w3-bar-block w3-card-4" id="thead_bot_nav_option_pro">
+						      	<div class="col-sm-6" style="width: 200px">
+						      		<a href="#" class="w3-bar-item w3-button"> Chất Liệu Đồng </a>
+							        <a href="#" class="w3-bar-item w3-button">Chất Liệu Chì</a>
+							        <a href="#" class="w3-bar-item w3-button">NHôm</a>
+							        <a href="#" class="w3-bar-item w3-button">gang</a>
+						      	</div>
+						        
+						      	<div class="col-sm-6" style="width: 200px">
+						      		<a href="#" class="w3-bar-item w3-button">sắt</a>
+							        <a href="#" class="w3-bar-item w3-button">nhựa</a>
+							        <a href="#" class="w3-bar-item w3-button">chai </a>
+							        <a href="#" class="w3-bar-item w3-button">lọ</a>
+						      	</div>
+
+						      </div>
+						    </div>
+
+							<a href="#" class="w3-bar-item w3-button">About Us</a>
+						</div>
+						
+					</div>
+					<div class="col-sm-2" id="buy">
+							<a class="" href="Giỏ Hàng/gioHang.html"><i class='fas fa-cart-plus' style="font-size: 18px; margin-top: 5px "></i> Giỏ Hàng</a>
+					</div>
+
+				
+			</div>	  
+		</div>		<br>	
+	</thead>
+<br>
+
+
+
+
+
+
+<tbody>
+	<!-- <div class="jumbotron">
+		<div class="container" style="">
+			<div class="col-sm-3" style="border: 1px solid black;background-color: white">
+				<div >
+					<img  src="../../img/san pham/ram.jpg"  height="200">
+				</div>
+			</div>
+			<div class="col-sm-6" style="border: 1px solid black;background-color: white">
+				<div >
+					<p>CHAI NHỰA 75ml</p>
+					<p>Thương hiệu: JBLXem thêm Âm thanh tại nhà của JBL</p>
+					<hr>
+					<span><h2>100.000vnd</h2></span><br>
+					<span  style=" text-decoration: line-through; font-size: 11px" > <h4>150.000vnd</h4></span><br>
+				</div>
+				<div class="">
+						
+						<div class="col-sm-5">
+							<p>số lượng:</p>
+							<input class="form-control text-center" value="1" type="number">
+						</div>
+						
+				</div>
+					<br>
+				<div class="row">
+						<div class="col-sm-6">
+							<button class="col-sm-12">MUA NGAY</button>
+						</div>
+						<div class="col-sm-6">
+							<button class="col-sm-12">THÊM VÀO GIỎ HÀNG</button>
+						</div>
+					
+					
+				</div>
+			</div>
+			<div class="col-sm-3" style="border: 1px solid black;background-color: white">
+				<div>
+					<p>Tùy chọn giao hàng</p>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container" >
+			<div class="col-sm-10" style="background-color: white">
+				<p>Mô tả sản phẩm Loa JBL Control 28</p>
+				<hr>
+				<div>
+				<ul class="col-sm-6">
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+				</ul>
+				<ul class="col-sm-6">
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+					<li>Dải tần số 60 Hz đến 16 kHz (-10 dB)</li>
+				</ul>
+				</div>
+				
+				<strong>Giới thiệu Loa JBL Control 28</strong>
+				<p>Loa JBL Control 28 Là loại loa karaoke được thiết chuyên dụng cho quán cafe trong nhà hoặc ngoài trời đều nghe rất hay. Thiết kế gọn, thanh không chiếm nhiều diện tích của quán và còn là vật trang trí cho quán thêm sang trọng. Loa được làm bằng chất liệu cao cấp, có thể chịu được cường độ âm thanh cao trong thời gian dài, giúp loa bền vững không bị hư lặt vặt, tiến kiệm chi phí cho người kinh doanh</p>
+				<img  src="../../img/san pham/ram.jpg"  width="800" height="500">
+
+				<div>
+					<strong>Thông số kỹ thuật </strong>
+					<ul>
+						<li>Công suất âm thanh: 175W</li>
+						<li>Công suất âm thanh: 175W</li>
+						<li>Công suất âm thanh: 175W</li>
+						<li>Công suất âm thanh: 175W</li>
+						<li>Công suất âm thanh: 175W</li>
+					</ul>
+				</div><br>
+				<div>
+				<strong>Đặc tính sản phẩm Loa JBL Control 28</strong><br>
+				<div class="col-sm-6" style="margin-top: 10px">
+					<span>Thương Hiệu</span><br>
+					 <span>JBL</span>
+				</div>
+				<div class="col-sm-6"style="margin-top: 10px" >
+					<span>Dòng sản phẩm</span><br>
+					 <span>Loa đứng</span>
+				</div>
+				<div class="col-sm-6" style="margin-top: 10px">
+					<span>SKUD</span><br>
+					 <span>266608873_VNAMZ-387022111</span>
+				</div>
+				<div class="col-sm-6"style="margin-top: 10px">
+					<span>Thời gian bảo hành</span><br>
+					 <span>12 tháng</span>
+				</div>
+				<div class="col-sm-6"style="margin-top: 10px">
+					<span>Loại bảo hành</span><br>
+					 <span>Bằng Phiếu bảo hành và Hóa đơn</span>
+				</div>
+
+				
+				</div>
+			</div>
+			<div class="col-sm-2" >
+
+				<div style="background-color: white">
+					<strong style="font-size: 15px">Quảng cáo sản phẩm</strong>
+					<div style="border: 1px solid black">
+						<a href="#">
+							<img style="width: 100%" src="../../img/san pham/ram.jpg" " height="250">
+							<span>RAM.....</span><br>
+							<span>100.000vnd</span>
+						</a>
+						
+					</div>
+					<div style="border: 1px solid black">
+						<a href="#">
+							<img style="width: 100%" src="../../img/san pham/ram.jpg" " height="250">
+							<span>RAM.....</span><br>
+							<span>100.000vnd</span>
+						</a>
+						
+					</div>
+					<div style="border: 1px solid black">
+						<a href="#">
+							<img style="width: 100%" src="../../img/san pham/ram.jpg" " height="250">
+							<span>RAM.....</span><br>
+							<span>100.000vnd</span>
+						</a>
+						
+					</div>
+					<div style="border: 1px solid black">
+						<a href="#">
+							<img style="width: 100%" src="../../img/san pham/ram.jpg" " height="250">
+							<span>RAM.....</span><br>
+							<span>100.000vnd</span>
+						</a>
+						
+					</div>
+						
+					
+				
+			</div>
+			</div>
+			
+		</div>
+	</div>
+
+
+
+
+
+
+
+ -->
+
+
+
+<style type="text/css">
+  body {  
+font-family:Arial, Helvetica, sans-serif;   
+overflow-x: hidden;
+}
+ 
+img {   
+max-width: 100%;
+}
+ 
+.preview {  
+display: -webkit-box;   
+display: -webkit-flex;  
+display: -ms-flexbox;   
+display: flex;  
+-webkit-box-orient: vertical;   
+-webkit-box-direction: normal;  
+-webkit-flex-direction: column; 
+-ms-flex-direction: column; 
+flex-direction: column;
+} 
+ 
+@media screen and (max-width: 996px) { 
+.preview { 
+margin-bottom: 20px;
+}
+}
+ 
+.preview-pic {  
+-webkit-box-flex: 1;    
+-webkit-flex-grow: 1;   
+-ms-flex-positive: 1;   
+flex-grow: 1;
+}
+ 
+.preview-thumbnail.nav-tabs {   
+border: none;   
+margin-top: 15px;
+}
+ 
+.preview-thumbnail.nav-tabs li {    
+width: 18%; 
+margin-right: 2.5%;
+}
+ 
+.preview-thumbnail.nav-tabs li img {    
+max-width: 100%;    
+display: block;
+}
+ 
+.preview-thumbnail.nav-tabs li a {  
+padding: 0; 
+margin: 0;  
+cursor:pointer;
+}
+ 
+.preview-thumbnail.nav-tabs li:last-of-type {   
+margin-right: 0;
+}
+ 
+.tab-content {  
+overflow: hidden;
+}
+ 
+.tab-content img {  
+width: 100%;    
+-webkit-animation-name: opacity;    
+animation-name: opacity; 
+-webkit-animation-duration: .3s; 
+animation-duration: .3s;
+}
+ 
+.card { 
+margin-top: 0px;    
+background: #eee;   
+padding: 3em;   
+line-height: 1.5em;
+} 
+ 
+@media screen and (min-width: 997px) { 
+.wrapper { 
+display: -webkit-box; 
+display: -webkit-flex; 
+display: -ms-flexbox; 
+display: flex;
+}
+}
+ 
+.details {  
+display: -webkit-box;
+    display: -webkit-flex;  
+display: -ms-flexbox;   
+display: flex;  
+-webkit-box-orient: vertical;   
+-webkit-box-direction: normal;  
+-webkit-flex-direction: column; 
+-ms-flex-direction: column; 
+flex-direction: column;
+}
+ 
+.colors {   
+-webkit-box-flex: 1;    
+-webkit-flex-grow: 1;   
+-ms-flex-positive: 1;   
+flex-grow: 1;
+}
+ 
+.product-title, .price, .sizes, .colors {   
+text-transform: UPPERCASE;  
+font-weight: bold;
+}
+ 
+.checked, .price span { 
+color: #ff9f1a;
+}
+ 
+.product-title, .rating, .product-description, .price, .vote, .sizes {  
+margin-bottom: 15px;
+}
+ 
+.product-title {    
+margin-top: 0;
+}
+ 
+.size {
+    margin-right: 10px;
+}
+ 
+.size:first-of-type {   
+margin-left: 40px;
+}
+ 
+.color {    
+display: inline-block;  
+vertical-align: middle; 
+margin-right: 10px; 
+height: 2em;    
+width: 2em; 
+border-radius: 2px;
+}
+ 
+.color:first-of-type {  
+margin-left: 20px;
+}
+ 
+.add-to-cart, .like {   
+background: #ff9f1a;    
+padding: 1.2em 1.5em;   
+border: none;   
+text-transform: UPPERCASE;  
+font-weight: bold;  
+color: #fff;    
+text-decoration:none; 
+-webkit-transition: background .3s ease; 
+transition: background .3s ease;
+}
+ 
+.add-to-cart:hover, .like:hover {   
+background: #b36800;    
+color: #fff;    
+text-decoration:none;
+}
+ 
+.not-available {    
+text-align: center; 
+line-height: 2em;
+}
+ 
+.not-available:before { 
+font-family: fontawesome;   
+content: "\f00d";   
+color: #fff;
+}
+ 
+.orange {   
+background: #ff9f1a;
+}
+ 
+.green {    
+background: #85ad00;
+}
+ 
+.blue { 
+background: #0076ad;
+}
+ 
+.tooltip-inner {    
+padding: 1.3em;
+} 
+ 
+@-webkit-keyframes opacity { 
+0% { opacity: 0; -webkit-transform: scale(3); transform: scale(3);} 
+100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1);}
+} 
+ 
+@keyframes opacity { 
+0% { opacity: 0; -webkit-transform: scale(3); transform: scale(3);} 
+100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1);}
+}
+</style>
+
+
+
+
+ 	<div class="container"> 
+ <div class="card"> 
+  <div class="container-fliud"> 
+   <div class="wrapper row"> 
+    <div class="preview col-md-6"> 
+     <div class="preview-pic tab-content"> 
+      <div class="tab-pane active" id="pic-1"><img src="../../img/san pham/cap.jpg" alt="">
+      </div> 
+      <div class="tab-pane" id="pic-2"><img src="../../img/san pham/tplinkusb.jpg" alt="">
+      </div> 
+      <div class="tab-pane" id="pic-3"><img src="../../img/san pham/ram.jpg" alt="">
+      </div> 
+      <div class="tab-pane" id="pic-4"><img src="../../img/san pham/usb.jpg" alt="">
+      </div> 
+      <div class="tab-pane" id="pic-5"><img src="../../img/san pham/ram.jpg" alt="">
+      </div> 
+     </div> 
+     <ul class="preview-thumbnail nav nav-tabs">
+     	<div class="logo_menuchinh" style="float:left; padding-top:5px; padding-left:10px; color:#fff; margin-left:auto; margin-right:auto; text-align:center; line-height:40px; font-size:16px;font-weight:bold;font-family:Arial"></div>
+     <div class="menu-icon"><span>Menu</span></div> 
+      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="../../img/san pham/cap.jpg" alt=""></a>
+      </li> 
+      <li><a data-target="#pic-2" data-toggle="tab"><img src="../../img/san pham/tplinkusb.jpg" alt=""></a>
+      </li> 
+      <li><a data-target="#pic-3" data-toggle="tab"><img src="../../img/san pham/ram.jpg" alt=""></a>
+      </li> 
+      <li><a data-target="#pic-4" data-toggle="tab"><img src="../../img/san pham/usb.jpg" alt=""></a>
+      </li> 
+      <li><a data-target="#pic-5" data-toggle="tab"><img src="../../img/san pham/ram.jpg" alt=""></a>
+      </li> 
+     </ul> 
+    </div> 
+    <div class="details col-md-6"> 
+     <h3 class="product-title">Thời trang cho bé trai nhiều màu sắc ngộ nghĩnh</h3> 
+     <div class="rating"> 
+      <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> 
+      </div> <span class="review-no">123 đánh giá</span> 
+     </div> 
+     <p class="product-description">Loa JBL Control 28 Là loại loa karaoke được thiết chuyên dụng cho quán cafe trong nhà hoặc ngoài trời đều nghe rất hay. Thiết kế gọn, thanh không chiếm nhiều diện tích của quán và còn là vật trang trí cho quán thêm sang trọng. Loa được làm bằng chất liệu cao cấp, có thể chịu được cường độ âm thanh cao trong thời gian dài, giúp loa bền vững không bị hư lặt vặt, tiến kiệm chi phí cho người kinh doanhLoa JBL Control 28 Là loại loa karaoke được thiết chuyên dụng cho quán cafe trong nhà hoặc ngoài trời đều nghe rất hay. Thiết kế gọn, thanh không chiếm nhiều diện tích của quán và còn là vật trang trí cho quán thêm sang trọng. Loa được làm bằng chất liệu cao cấp, có thể chịu được cường độ âm thanh cao trong thời gian dài, giúp loa bền vững không bị hư lặt vặt, tiến kiệm chi phí cho người kinh doanh</p> 
+     <h4 class="price">Giá bán: 200.000 đ</h4> 
+     <p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87 bình chọn)</strong>
+     </p> 
+     <h5 class="sizes">Kích cỡ: <span class="size" data-toggle="tooltip" title="small">s</span> <span class="size" data-toggle="tooltip" title="medium">m</span> <span class="size" data-toggle="tooltip" title="large">l</span> <span class="size" data-toggle="tooltip" title="xtra large">xl</span> 
+     </h5> 
+     <!-- <h5 class="colors">Màu: <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span> <span class="color green"></span> <span class="color blue"></span> 
+     </h5>  -->
+     <div class="action"> <a href="#" target="_blank">            <button class="add-to-cart btn btn-default" type="button">MUA NGAY</button>            </a> <a href="#" target="_blank">            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>            </a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div>
+</div> 
+</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+	<tfoot>
+		<div class="container-fluid" id="tfoot" style="background-color: #4F4F4F; color: white; height: 250px;">
+			<div class="container" id="tfoot_contain">
+				<div class="col-sm-3">
+					<p><h4>LIÊN HỆ VỚI OceanGate</h4></a></p>
+					<p><a href="#">Thứ 2 đến CN: 9h - 18h (Hotline), 7h - 22h (chat trực tuyến)</a></p>
+					<p><a href="#">Trung tâm hỗ trợ</a></p>
+					<p><a href="#">Hướng dẫn đặt hàng</a></p>
+					<p><a href="#">Chính sách hàng nhập khẩu</a></p>
+					<p><a href="#">Hướng dẫn đổi trả hàng</a></p>
+
+				</div>
+				<div class="col-sm-3">
+					<p><h4>OceanGate VIỆT NAM</h4></a></p>
+					<p><a href="#">Về OceanGate Việt Nam</a></p>
+					<p><a href="#">Tuyển dụng</a></p>
+					<p><a href="#">Chính sách bảo mật</a></p>
+					<p><a href="#">Điều khoản mua bán hàng hóa</a></p>
+					
+				</div>
+
+				<div class="col-sm-3" id="tfoot_column_3rd">
+					<p><h4>KẾT NỐI VỚI CHÚNG TÔI</h4></a></p>
+						<a href="#"><img src="../../img/slide header/Facebook-logo200.png" width="30" height="30"></a>
+						<a href="#"><img src="../../img/slide header/zalo.jpg" width="30" height="30"></a>	
+						<a href="#"><img src="../../img/slide header/youtube.jpg" width="30" height="30"></a>		
+						<a href="#"><img src="../../img/slide header/instagram.jpg" width="30" height="30"></a>
+						<a href="#"><img src="../../img/slide header/twitter.png" width="30" height="30"></a>					
+					
+				</div>
+				<div class="col-sm-3">
+					<p><h4 style="text-align: center;">CHỨNG NHẬN</h4></a></p>
+					<div class="col-sm-5">						
+						<p><a href="#"><img src="../../img/slide header/chứng nhận 1.png" width="70" height="70"></a></p>
+						
+					</div>
+					<div class="col-sm-7">
+						<p><a href="#"><img src="../../img/slide header/dathongbao.png" width="120" height="40"></a></p>
+						<p><a href="#"><img src="../../img/slide header/dadangky.png" width="120" height="40"></a></p>
+						<p><a href="#"><img src="../../img/slide header/camket.png" width="120" height="40"></a></p>
+					</div>
+				
+				</div>
+			</div>
+			<div class="container">
+				<div class="col-sm-3">
+					<h4>CÁCH THỨC THANH TOÁN: </h4>
+				</div>
+				<div class="col-sm-8" id="tfoot_column_3rd">
+					<a href="#"><img src="../../img/slide header/visa1.png" width="70" height="40"></a>
+					<a href="#"><img src="../../img/slide header/mastercard.png" width="70" height="40"></a>
+					<a href="#"><img src="../../img/slide header/jcb.png" width="80" height="40"></a>
+					<a href="#"><img src="../../img/slide header/PayPal.png" width="80" height="40"></a>
+					
+				</div>
+				
+				
+
+			</div>
+
+		
+	</div>
+	</tfoot>
+</body>
+</html>

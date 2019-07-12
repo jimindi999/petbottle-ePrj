@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<title> OceanGate</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- add link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">.table&amp;amp;gt;tbody&amp;amp;gt;tr&amp;amp;gt;td, .table&amp;amp;gt;tfoot&amp;amp;gt;tr&amp;amp;gt;td {  
+vertical-align: middle;
+}
+ 
+@media screen and (max-width: 600px) { 
+table#cart tbody td .form-control { 
+width:20%; 
+display: inline !important;
+} 
+ 
+.actions .btn { 
+width:36%; 
+margin:1.5em 0;
+} 
+ 
+.actions .btn-info { 
+float:left;
+} 
+ 
+.actions .btn-danger { 
+float:right;
+} 
+ 
+table#cart thead {
+display: none;
+} 
+ 
+table#cart tbody td {
+display: block;
+padding: .6rem;
+min-width:320px;
+} 
+ 
+table#cart tbody tr td:first-child {
+background: #333;
+color: #fff;
+} 
+ 
+table#cart tbody td:before { 
+content: attr(data-th);
+font-weight: bold; 
+display: inline-block;
+width: 8rem;
+} 
+ 
+table#cart tfoot td {
+display:block;
+} 
+table#cart tfoot td .btn {
+display:block;
+}
+}</style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+	
+<thead>
+		<div class="container-fluid" id="thead_mid_nav" >
+			<div class="row" id="thead_mid_nav_option" >
+				<div class="col-sm-offset-1 col-sm-3">
+					<img src="../img anh MInh/logo/logo aptech.png" width=200 height="80">
+				</div>
+				<div class="col-sm-5" style="margin-top: 20px;">
+				    <form method="post">
+					    	<div class="row">
+						    	<div class="input-group col-sm-10" >
+						    		<input type="text" class="form-control" id="search" placeholder="Bạn cần gì hôm  nay?" name="txtSearch">
+							      	<span class="input-group-btn" >
+							      		<button type="submit" class="btn btn-default ">
+							      			<i class="fa fa-search"></i> Tìm Kiếm
+							      		</button>
+							      	</span>							      		
+					    		</div>
+					    	</div>
+				    </form>     
+				</div>
+				<div class="col-sm-3" style="margin-top: 20px;">
+					<a  id="login-window"  href="#login-box"> <span class="glyphicon glyphicon-share" style="font-size: 25px">Login</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="thead_bot_nav">
+			<div class="container" id="thead_bot_nav_option">
+				<div class="col-sm-10" >
+					<a class="active" href="../index.html"><i class='fas fa-home' style='font-size:15px;color:white'></i>Home</a>
+					<a href="Products/products.html">Category</a>
+					<a href="#contact">Product</a>
+					<a href="#about">About Us</a>
+				</div>
+				<div class="col-sm-2" >
+					<a class="Giỏ Hàng/gioHang.html" href="#"><i class='fas fa-cart-plus' style='font-size:18px'> Giỏ Hàng</i></a>
+				</div>
+			</div>		 
+		</div>			
+	</thead><br>
+<br>
+
+
+
+
+
+
+
+
+
+
+	<h2 class="text-center">Giỏ Hàng Của Bạn</h2>
+<div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+  </thead> 
+  <tbody><tr> 
+   <td data-th="Product"> 
+    <div class="row"> 
+     <div class="col-sm-2 hidden-xs"><img src="../../img/san pham/ram.jpg" alt="Sản phẩm 1" class="img-responsive" width="100">
+     </div> 
+     <div class="col-sm-10"> 
+      <h4 class="nomargin">Sản phẩm 1</h4> 
+      <p>Mô tả của sản phẩm 1</p> 
+     </div> 
+    </div> 
+   </td> 
+   <td data-th="Price">200.000 đ</td> 
+   <td data-th="Quantity"><input class="form-control text-center" value="1" type="number">
+   </td> 
+   <td data-th="Subtotal" class="text-center">200.000 đ</td> 
+   <td class="actions" data-th="">
+    <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i>
+    </button> 
+    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>
+    </button>
+   </td> 
+  </tr> 
+  <tr> 
+   <td data-th="Product"> 
+    <div class="row"> 
+     <div class="col-sm-2 hidden-xs"><img src="../../img/san pham/usb.jpg" alt="Sản phẩm 1" class="img-responsive" width="100">
+     </div> 
+     <div class="col-sm-10"> 
+      <h4 class="nomargin">Sản phẩm 2</h4> 
+      <p>Mô tả của sản phẩm 2</p> 
+     </div> 
+    </div> 
+   </td> 
+   <td data-th="Price">300.000 đ</td> 
+   <td data-th="Quantity"><input class="form-control text-center" value="1" type="number">
+   </td> 
+   <td data-th="Subtotal" class="text-center">300.000 đ</td> 
+   <td class="actions" data-th="">
+    <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i>
+    </button> 
+    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>
+    </button>
+   </td> 
+  </tr> 
+  </tbody><tfoot> 
+   <tr class="visible-xs"> 
+    <td class="text-center"><strong>Tổng 200.000 đ</strong>
+    </td> 
+   </tr> 
+   <tr> 
+    <td><a href="../index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+    </td> 
+    <td colspan="2" class="hidden-xs"> </td> 
+    <td class="hidden-xs text-center"><strong>Tổng tiền 500.000 đ</strong>
+    </td> 
+    <td><a href="" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+
+
+
+
+
+
+<br>
+	<tfoot>
+		<div class="container-fluid" id="tfoot" style="background-color: #4F4F4F; color: white; height: 250px;">
+			<div class="container" id="tfoot_contain">
+				<div class="col-sm-3">
+					<p><h4>LIÊN HỆ VỚI OceanGate</h4></a></p>
+					<p><a href="#">Thứ 2 đến CN: 9h - 18h (Hotline), 7h - 22h (chat trực tuyến)</a></p>
+					<p><a href="#">Trung tâm hỗ trợ</a></p>
+					<p><a href="#">Hướng dẫn đặt hàng</a></p>
+					<p><a href="#">Chính sách hàng nhập khẩu</a></p>
+					<p><a href="#">Hướng dẫn đổi trả hàng</a></p>
+
+				</div>
+				<div class="col-sm-3">
+					<p><h4>OceanGate VIỆT NAM</h4></a></p>
+					<p><a href="#">Về OceanGate Việt Nam</a></p>
+					<p><a href="#">Tuyển dụng</a></p>
+					<p><a href="#">Chính sách bảo mật</a></p>
+					<p><a href="#">Điều khoản mua bán hàng hóa</a></p>
+					
+				</div>
+
+				<div class="col-sm-3" id="tfoot_column_3rd">
+					<p><h4>KẾT NỐI VỚI CHÚNG TÔI</h4></a></p>
+						<a href="#"><img src="../../img/slide header/Facebook-logo200.png" width="30" height="30"></a>
+						<a href="#"><img src="../../img/slide header/zalo.jpg" width="30" height="30"></a>	
+						<a href="#"><img src="../../img/slide header/youtube.jpg" width="30" height="30"></a>		
+						<a href="#"><img src="../../img/slide header/instagram.jpg" width="30" height="30"></a>
+						<a href="#"><img src="../../img/slide header/twitter.png" width="30" height="30"></a>					
+					
+				</div>
+				<div class="col-sm-3">
+					<p><h4 style="text-align: center;">CHỨNG NHẬN</h4></a></p>
+					<div class="col-sm-5">						
+						<p><a href="#"><img src="../../img/slide header/chứng nhận 1.png" width="70" height="70"></a></p>
+						
+					</div>
+					<div class="col-sm-7">
+						<p><a href="#"><img src="../../img/slide header/dathongbao.png" width="120" height="40"></a></p>
+						<p><a href="#"><img src="../../img/slide header/dadangky.png" width="120" height="40"></a></p>
+						<p><a href="#"><img src="../../img/slide header/camket.png" width="120" height="40"></a></p>
+					</div>
+				
+				</div>
+			</div>
+			<div class="container">
+				<div class="col-sm-3">
+					<h4>CÁCH THỨC THANH TOÁN: </h4>
+				</div>
+				<div class="col-sm-8" id="tfoot_column_3rd">
+					<a href="#"><img src="../../img/slide header/visa1.png" width="70" height="40"></a>
+					<a href="#"><img src="../../img/slide header/mastercard.png" width="70" height="40"></a>
+					<a href="#"><img src="../../img/slide header/jcb.png" width="80" height="40"></a>
+					<a href="#"><img src="../../img/slide header/PayPal.png" width="80" height="40"></a>
+					
+				</div>
+				
+				
+
+			</div>
+
+		
+	</div>
+	</tfoot>
+</body>
+</html>
