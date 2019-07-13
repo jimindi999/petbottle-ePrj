@@ -25,7 +25,6 @@
         $xtpl->assign("baseUrl", $baseUrl);
         $xtpl->parse("ADMIN");
         $xtpl->out("ADMIN");
-        echo 'test';
     }else if($a == 'forgot_password'){
         include ("controllers/forgot_password.php");
     }else{
