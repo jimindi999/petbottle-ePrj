@@ -1,13 +1,13 @@
 <?php
     include ("../libs/config.php");
     //Check is cookies existed => set session id and admin level as existed cookies
-    if(isset($_COOKIE['user_id'])){
-        $_SESSION['user_id'] = $_COOKIE['user_id'];
-        $_SESSION['admin'] = $_COOKIE['admin'];
-        $_SESSION['username'] = $_COOKIE['username'];
+    if(isset($_COOKIE['admin_id'])){
+        $_SESSION['admin_id'] = $_COOKIE['admin_id'];
+        $_SESSION['admin_level'] = $_COOKIE['admin_level'];
+        $_SESSION['admin_username'] = $_COOKIE['admin_username'];
     }
     $a = (isset($_GET['a']))?$_GET['a']:'home';
-    if(isset($_SESSION['user_id'])){
+    if(isset($_SESSION['admin_id'])){
         $xtpl = new XTemplate("views/index.html");        
         $a = (isset($_GET['a']))?$_GET['a']:'home';
         if($a != ''){
@@ -22,7 +22,7 @@
         }
         include("controllers/footer.php");
         $xtpl->assign('footer', $footer);
-        $xtpl->assign("baseUrl", $baseUrl);
+        $xtpl->assign("baseURL", $baseURL);
         $xtpl->parse("ADMIN");
         $xtpl->out("ADMIN");
     }else if($a == 'forgot_password'){

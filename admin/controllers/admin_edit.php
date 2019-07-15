@@ -1,5 +1,5 @@
 <?php
-    if ($_SESSION['admin'] != 'Admin' && $_SESSION['admin'] != 'Moderator'){
+    if ($_SESSION['admin_level'] != 'Admin' && $_SESSION['admin_level'] != 'Moderator'){
         $f->redir('index.php');
     }else{
         $xtpa = new XTemplate("views/admin_edit.html");

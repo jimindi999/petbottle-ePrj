@@ -1,5 +1,5 @@
 <?php
-    if($_SESSION['admin'] === 'Admin' || $_SESSION['admin'] === 'Moderator'){
+    if($_SESSION['admin_level'] === 'Admin' || $_SESSION['admin_level'] === 'Moderator'){
         $xtpa = new XTemplate('views/nav_admin.html');
     }else $xtpa = new XTemplate('views/nav_normal.html');
     $nav = isset($_GET['a'])?$_GET['a']:'';
@@ -11,6 +11,6 @@
     else if($nav === 'new_product') $xtpa->assign('new_product','active');
     else if($nav === 'customers') $xtpa->assign('customers','active');
     else if($nav === 'orders') $xtpa->assign('orders','active');
-    $xtpa->assign('user', $_SESSION['username']);
+    $xtpa->assign('user', $_SESSION['admin_username']);
     $xtpa->parse('NAVBAR');
     $navbar = $xtpa->text('NAVBAR');

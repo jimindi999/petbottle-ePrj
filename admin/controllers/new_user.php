@@ -112,7 +112,7 @@
         }
     }
     //Admin can create new user as admin as max level but moderator can only create moderator at max
-    if ($_SESSION['admin'] === 'Admin'){
+    if ($_SESSION['admin_level'] === 'Admin'){
         $select = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
                         <option value='' hidden>Level</option>
                         <option value='Admin' {$slAdmin}>Admin</option>

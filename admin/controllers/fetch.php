@@ -2,7 +2,7 @@
     //Test code for AJAX, not using
     include("../../libs/config.php");
     $row = $_POST['row'];
-    $row_offset = $row + 15;
+    $row_offset = $row + 10;
     $s = $_POST['s'];
     if ($s == 'Male' || $s == 'Female') $user = $db->fetch("SELECT id, username, email, firstName, lastName, dob, gender, position, admin_level FROM users WHERE gender = '{$s}' ORDER BY id LIMIT {$row}, {$row_offset}");
     else{

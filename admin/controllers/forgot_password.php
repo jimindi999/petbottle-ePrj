@@ -1,5 +1,5 @@
 <?php
-    if(isset($_SESSION['user_id'])){
+    if(isset($_SESSION['admin_id'])){
         $f->redir("?a=home");
     }else{
         $xtpa = new XTemplate("views/forgot_password.html");

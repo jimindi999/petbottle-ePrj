@@ -1,5 +1,5 @@
 <?php
-    if ($_SESSION['admin'] != 'Admin' && $_SESSION['admin'] != 'Moderator'){
+    if ($_SESSION['admin_level'] != 'Admin' && $_SESSION['admin_level'] != 'Moderator'){
         $f->redir('index.php');
     }else{
         $xtpa = new XTemplate("views/users.html");
@@ -44,12 +44,12 @@
                 $slNormal = ($r['admin_level'] === 'Normal')?'selected':'';  
                 //Restrict the action user can take depend on their level
                 //Moderator can not change admin's level              
-                if ($_SESSION['admin'] == 'Moderator' && $r['admin_level'] === 'Admin'){
+                if ($_SESSION['admin_level'] == 'Moderator' && $r['admin_level'] === 'Admin'){
                     $r['update'] = "";
                     $r['select'] = $r['admin_level'];
                 }
                 //Admin can change all users's level and can set other to admin
-                else if ($_SESSION['admin'] === 'Admin'){
+                else if ($_SESSION['admin_level'] === 'Admin'){
                     $r['update'] = "<a href='javascript:void()' onclick='setLevel("."{$r['id']}, {$r['no']}".")'>Update</a>";
                     $r['select'] = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
                                     <option value='' hidden>Level</option>

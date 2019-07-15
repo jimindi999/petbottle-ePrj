@@ -1,5 +1,5 @@
 <?php
-    if ($_SESSION['admin'] != 'Admin' && $_SESSION['admin'] != 'Moderator'){
+    if ($_SESSION['admin_level'] != 'Admin' && $_SESSION['admin_level'] != 'Moderator'){
         $f->redir('index.php');
     }else{
         //Get 'm', 's', 'cat' keyword from url to redirect back to the previous page (m = module, s = search keyword, cat = categories id)

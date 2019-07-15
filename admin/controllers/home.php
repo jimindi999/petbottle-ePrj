@@ -1,10 +1,10 @@
 <?php
-    if (!isset($_SESSION['user_id'])){
+    if (!isset($_SESSION['admin_id'])){
         $f->redir("index.php");
     }else{
         $xtpa = new XTemplate("views/home.html");
         //Hide user panel from normal users
-        if ($_SESSION['admin'] === 'Admin' || $_SESSION['admin'] === 'Moderator'){
+        if ($_SESSION['admin_level'] === 'Admin' || $_SESSION['admin_level'] === 'Moderator'){
             $user = $db->fetch("SELECT * FROM users WHERE 1 = 1");
             $count = count($user);
             $hidden = "<a href='?a=users'>
