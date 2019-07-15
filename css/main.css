@@ -1,48 +1,49 @@
-	
 	/*login*/
 
-#over {
-    display: none;
-    background: #000;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    z-index: 999;
-}
-.login a, a:visited, a:active{
-    text-decoration:none;
-}
-.login
-{
-    background-color:#85B561;
-    height:auto;
-    width:100%;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
-    font-size:14px;
-    padding-bottom:5px;
-    display:none;
-    overflow:hidden;
-    position:absolute;
-    z-index:99999;
-    top:10%;
+	#over {
+	    display: none;
+	    background: #000;
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    opacity: 0.8;
+	    z-index: 999;
+	}
 
-   /* left:50%;
+	.login a,
+	a:visited,
+	a:active {
+	    text-decoration: none;
+	}
+
+	.login {
+	    background-color: #85B561;
+	    height: auto;
+	    width: 100%;
+	    font-family: Verdana, Arial, Helvetica, sans-serif;
+	    font-size: 14px;
+	    padding: 10px;
+	    display: none;
+	    overflow: hidden;
+	    position: absolute;
+	    z-index: 99999;
+        top: 10%;
+        border-radius: 15px 15px 15px 15px;
+
+	    /* left:50%;
     margin-left:-300px;*/
-}
- 
-.login .login_title
-{
-    color:white;
-    font-size:16px;
-    padding:8px 0 5px 8px;
-    text-align:left;
+	}
 
-}
- 
-/*.login-content label {
+	.login .login_title {
+	    color: white;
+	    font-size: 16px;
+	    text-align: left;
+
+	}
+
+	/*.login-content label {
     display: block;
     padding-bottom: 7px;
 }
@@ -50,47 +51,57 @@
 .login-content span {
     display: block;
 }*/
-.login-content
-{
-    padding-left:35px;
-    background-color:white;
-    margin-left:5px;
-    margin-right:5px;
-    height:auto;
-    padding-top:15px;
-    overflow:hidden;
-}
- 
-.img-close {
-    float: right;
-    margin-top:-43px;
-    margin-right:5px
-}
-.login_button{
-    display: inline-block;
-    min-width: 46px;
-    text-align: center;
-    color: #444;
-    font-size: 14px;
-    font-weight: 700;
-    height: 36px;
-    padding: 0px 8px;
-    line-height: 36px;
-    border-radius: 4px;
-    transition: all 0.218s ease 0s;
-    border: 1px solid #DCDCDC;
-    background-color: #F5F5F5;
-    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
-    cursor: pointer;
-}
-.login_button:hover{
-     border: 1px solid #DCDCDC;
-    text-decoration: none;
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
-}
-/*.login input
+	.login-content {
+	    padding: 10px;
+	    background-color: white;
+	    height: auto;
+        overflow: hidden;
+        border-radius: 15px 15px 15px 15px;
+    }
+    
+    .login-content label{
+        margin-top: 5px;
+    }
+    .login-content input[type="checkbox"]{
+        margin-top: 10px;
+    }
+    .login-content .btn{
+        margin-top: 10px;
+    }
+
+	.img-close {
+	    float: right;
+	    margin-top: -43px;
+	    margin-right: 5px
+	}
+
+	.login_button {
+	    display: inline-block;
+	    min-width: 46px;
+	    text-align: center;
+	    color: #444;
+	    font-size: 14px;
+	    font-weight: 700;
+	    height: 36px;
+	    padding: 0px 8px;
+	    line-height: 36px;
+	    border-radius: 4px;
+	    transition: all 0.218s ease 0s;
+	    border: 1px solid #DCDCDC;
+	    background-color: #F5F5F5;
+	    background-image: -moz-linear-gradient(center top, #F5F5F5, #F1F1F1);
+	    cursor: pointer;
+	}
+
+	.login_button:hover {
+	    border: 1px solid #DCDCDC;
+	    text-decoration: none;
+	    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	}
+
+	/*.login input
 {
     border:1px solid #D5D5D5;
     border-radius:5px;
@@ -102,51 +113,48 @@
     word-spacing:0.1em;
     width:300px;
 }*/
-.submit-button{
-    display: inline-block;
-    padding: auto;
-    margin: 15px 75px;
-    width: 150px;
-}
+	.submit-button {
+	    display: inline-block;
+	    padding: auto;
+	    margin: 15px 75px;
+	    width: 150px;
+	}
 
+	#thead_mid_nav {
+	    background-color: #DEF862;
+	    /*background-color:#fdb813; */
 
+	}
 
+	#thead_mid_nav_option {
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	}
 
+	#thead_bot_nav {
+	    background-color: #B78C09;
+	    height: 38px;
+	    position: -webkit-sticky;
+	    position: sticky;
+	    top: 0;
+	    z-index: 1
+	}
 
-
-
-
-		#thead_mid_nav{
-    		background-color: #DEF862;
-      /*background-color:#fdb813; */
-
-    	}
-    	#thead_mid_nav_option{
-    		margin-top: 10px; 
-    		margin-bottom: 10px;
-    	}
-    	#thead_bot_nav{
-    		background-color: #B78C09; 
-    		height: 38px; 
-    		position: -webkit-sticky;
-  			position: sticky; 
-  			top: 0;
-  			z-index: 1
-    	}
 	/*	#thead_bot_nav_option {
 			overflow: hidden;
 			position: -webkit-sticky;
 			position: sticky;	
 		}*/
 
-		#thead_bot_nav_option a {
-			
-		    text-align:left;
-		    padding: 8px 10px;
-		    text-decoration: none;
-		    font-size: 15px;
-		}
-		/*#thead_bot_nav_option_pro a{
+	#thead_bot_nav_option a {
+
+	    text-align: left;
+	    padding: 8px 10px;
+	    text-decoration: none;
+	    font-size: 15px;
+	}
+
+	/*#thead_bot_nav_option_pro a{
 			width: 400px;
 			 text-align: left;
 		    padding: 8px 10px;
@@ -154,37 +162,39 @@
 		    font-size: 15px;
 		}*/
 
-/*		#buy a:hover {
+	/*		#buy a:hover {
 		    background-color: #ddd;
 		    color: black;
 		}*/
 
 
 
-		* {
-  box-sizing: border-box;
-}
+	* {
+	    box-sizing: border-box;
+	}
 
-#zoom {
-  padding: 8px;
-  background-color: white;
-  transition: transform .2s;
-  width: 281px;
-  height: 320px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  border: 2px solid white;
-   /* margin-left: 2px; */
-  
-}
-#zoom a{
-   text-decoration: none;
-}
-#zoom:hover {
-  -ms-transform: scale(1.01); 
-  -webkit-transform: scale(1.01); 
-  transform: scale(1.01); 
- background-color: #f9f9f9;
- border: 2px solid #f1f1f1;
-  cursor: pointer;
-}
+	#zoom {
+	    padding: 8px;
+	    background-color: white;
+	    transition: transform .2s;
+	    width: 281px;
+	    height: 320px;
+	    margin: 0 auto;
+	    border-collapse: collapse;
+	    border: 2px solid white;
+	    /* margin-left: 2px; */
+
+	}
+
+	#zoom a {
+	    text-decoration: none;
+	}
+
+	#zoom:hover {
+	    -ms-transform: scale(1.01);
+	    -webkit-transform: scale(1.01);
+	    transform: scale(1.01);
+	    background-color: #f9f9f9;
+	    border: 2px solid #f1f1f1;
+	    cursor: pointer;
+	}

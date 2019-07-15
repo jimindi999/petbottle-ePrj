@@ -1,0 +1,31 @@
+<!-- BEGIN: NAV -->
+<div class="container-fluid" id="thead_bot_nav">
+    <div class="container" id="thead_bot_nav_option">
+        <div class="col-sm-10">
+            <div class="w3-bar ">
+                <a href="?a=home" class="w3-bar-item w3-button">
+                    <i class='fas fa-home' style='font-size:15px;color:white'></i> Home
+                </a>
+                <div class="w3-dropdown-hover">
+                    <a href="?a=categories" class="w3-button">Categories <i class="fa fa-angle-down"></i></a>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4" id="thead_bot_nav_option_pro">
+                        <div class="col-sm-6" style="width: 200px">
+                            <!-- BEGIN: LS_CAT -->
+                            <a href="?a=categories&cat={LS.id}" class="w3-bar-item w3-button">{LS.cat_name}</a>
+                            <!-- END: LS_CAT -->
+                        </div>
+
+                    </div>
+                </div>
+                <a href="?a=products" class="w3-bar-item w3-button">Products</a>
+                <a href="?a=about_us" class="w3-bar-item w3-button">About Us</a>
+            </div>
+
+        </div>
+        <div class="col-sm-2" id="buy">
+            <a class="" href="?a=cart"><i class='fas fa-cart-plus' style="font-size: 18px; margin-top: 5px "></i>
+                Cart</a>
+        </div>
+    </div>
+</div>
+<!-- END: NAV -->
