@@ -31,7 +31,7 @@
         //check if user upload new picture
         if ($_FILES['imgUl']['name'] != ''){
             $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp');
-            $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseUrl);
+            $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseURL);
             $img = explode("|", $img_upload);
             if($img[0] === 'failed'){
                 $do_save = 0;
@@ -48,7 +48,7 @@
                     $xtpa->assign('erImg', $erImg);
                 }
             }else{
-                $img_url = explode($baseUrl, $img_url);
+                $img_url = explode($baseURL, $img_url);
                 $img_url = "../".$img_url[1];
                 unlink($img_url);
                 $img_url = $img[1];         
@@ -57,7 +57,7 @@
         //check if user upload new doc
         if ($_FILES['docUl']['name'] != ''){
             $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
-            $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseUrl);
+            $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseURL);
             $doc = explode("|", $doc_upload);
             if($doc[0] === 'failed'){
                 $do_save = 0;
@@ -74,7 +74,7 @@
                     $xtpa->assign('erDoc', $erDoc);
                 }
             }else{
-                $doc_url = explode($baseUrl, $doc_url);
+                $doc_url = explode($baseURL, $doc_url);
                 $doc_url = "../".$doc_url[1];
                 unlink($doc_url);
                 $doc_url = $doc[1];

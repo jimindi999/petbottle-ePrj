@@ -1,7 +1,7 @@
 <?php
     $xtpa = new XTemplate('views/profile.html');
     if ($_POST){
-        $user = $db->fetch("SELECT * FROM users WHERE id = {$_SESSION['user_id']}");
+        $user = $db->fetch("SELECT * FROM users WHERE id = {$_SESSION['admin_id']}");
         $user = $user[0];
         $do_save = 1;
         $username = $_POST['txtUsername'];
@@ -10,7 +10,7 @@
         $pass_new = (isset($_POST['txtNew']))?$_POST['txtNew']:'';
         $pass_new_conf = (isset($_POST['txtNewConf']))?$_POST['txtNewConf']:'';
         //check if username existed (not counting current username)
-        if ($db->checkExist("users", "id != {$_SESSION['user_id']} AND username = '{$username}'")){
+        if ($db->checkExist("users", "id != {$_SESSION['admin_id']} AND username = '{$username}'")){
             $do_save = 0;
             $erUsername = "<td></td>
                             <td>
@@ -19,7 +19,7 @@
             $xtpa->assign('erUsername', $erUsername);
         }
         //check if email existed (not counting current email)
-        if ($db->checkExist("users", "id != {$_SESSION['user_id']} AND email = '{$email}'")){
+        if ($db->checkExist("users", "id != {$_SESSION['admin_id']} AND email = '{$email}'")){
             $do_save = 0;
             $erEmail = "<td></td>
                             <td>
@@ -79,7 +79,7 @@
             }
         }
     }
-    $user = $db->fetch("SELECT * FROM users WHERE id = {$_SESSION['user_id']}");
+    $user = $db->fetch("SELECT * FROM users WHERE id = {$_SESSION['admin_id']}");
     $user = $user[0];
     $xtpa->assign('username', $user['username']);
     $xtpa->assign('firstName', $user['firstName']);
