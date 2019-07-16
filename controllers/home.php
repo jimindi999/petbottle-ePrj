@@ -7,6 +7,10 @@
             $no = $item[0]['id'];
         }
         while(in_array($no, $carousel));
+        $item_name = $item[0]['pro_name'];
+        $item[0]['item_name'] = $item_name;
+        $item[0]['pro_name'] = substr($item[0]['pro_name'], 0, 40);
+        if(strlen($item_name) >= 40) $item[0]['pro_name'] .= '...';
         array_push($carousel, $no);
         $xtpa->insert_loop('HOME.ITEMS', array('LS' => $item[0]));
     }
@@ -18,4 +22,5 @@
     //     }
     // }
     $xtpa->parse('HOME');
+    $xtpl->assign('title', 'PETBot');
     $content = $xtpa->text('HOME');

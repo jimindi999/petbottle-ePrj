@@ -189,8 +189,9 @@
 	}
 
 	.featured__price span {
-		font-style: italic;
-		color: red;
+		/* font-style: italic; */
+		font-weight: bold;
+		color: orangered;
 
 	}
 
