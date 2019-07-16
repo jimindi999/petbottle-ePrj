@@ -13,12 +13,12 @@
                 <div class="carousel-inner" style="height: 385px">
                     <!-- BEGIN: LS_CAROUSEL -->
                     <div class="item {active}">
-                        
+
                         <div>
-                            <a href="detail pro/details.html"><img src="{LS.pro_img}"
-                                    alt="picture" id="tbody_carousel_slide_picture"> </a>
+                            <a href="detail pro/details.html"><img src="{LS.pro_img}" alt="picture"
+                                    id="tbody_carousel_slide_picture"> </a>
                         </div>
-                        
+
                     </div>
                     <!-- END: LS_CAROUSEL -->
                 </div>
@@ -35,18 +35,24 @@
         <br>
         <div style="margin: 0 auto">
             <p>FEATURED PRODUCTS</p>
-            <!-- BEGIN: ITEMS -->
-            <div id="zoom" class="col-sm-4">
-                <a href="?a=products&id={LS.id}">
-                    <img src="{LS.pro_img}" width="100%">
-                    <div style="text-align: center;">
-                        <span>{LS.pro_name}</span><br>
+            <div class="featured">
+                <!-- BEGIN: ITEMS -->
+                <div id="zoom" class="col-sm-4">
+                    <a href="?a=products&id={LS.id}">
+                        <img src="{LS.pro_img}" width="100%">
+                        <div style="text-align: center;">
+                            <span>{LS.pro_name}</span><br>
+                            
+                        </div>
+                    </a>
+                    <div class="featured__price">
                         <span>{LS.pro_price}$</span>
-                    </div><br>
-                </a>
-                <button type="button" class="btn btn-primary col-sm-offset-4 col-sm-4" style="text-align: center; padding: 5px 0px 5px 0px">Add to cart</button>
+                        <button type="button" class="btn btn-primary"
+                        style="text-align: center; padding: 5px 5px 5px 5px">Add to cart</button>
+                    </div>
+                </div>
+                <!-- END: ITEMS -->
             </div>
-            <!-- END: ITEMS -->
         </div>
     </div>
 </div>

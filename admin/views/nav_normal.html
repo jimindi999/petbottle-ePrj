@@ -1,21 +1,43 @@
 <!-- BEGIN: NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div style="width: 50px"></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link {home}" href="?a=home">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link {profile}" href="?a=profile">Profile</a>
-                <a class="nav-item nav-link {categories}" href="?a=categories">Categories</a>
-                <a class="nav-item nav-link {products}" href="?a=products">Products</a>
-                <a class="nav-item nav-link {new_product}" href="?a=new_product">Add new products</a>
-                <a class="nav-item nav-link {customers}" href="?a=customers">Customers</a>
-                <a class="nav-item nav-link {orders}" href="?a=orders">Orders</a>
-            </div>
-        </div>
-        <div class="user">Welcome, {user}</div>
-    </nav>
-    <!-- END: NAVBAR -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand h1" href="#">PETBot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 myNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {home}">
+                <a class="nav-link" href="?a=home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {profile}">
+                <a class="nav-link" href="?a=profile">Profile</a>
+            </li>
+            <li class="nav-item {categories}">
+                <a class="nav-link" href="?a=categories">Categories</a>
+            </li>
+            <li class="nav-item {products}">
+                <a class="nav-link" href="?a=products">Products</a>
+            </li>
+            <li class="nav-item {new_product}">
+                <a class="nav-link" href="?a=new_product">Add new products</a>
+            </li>
+            <li class="nav-item {customers}">
+                <a class="nav-link" href="?a=customers">Customers</a>
+            </li>
+            <li class="nav-item {orders}">
+                <a class="nav-link" href="?a=orders">Orders</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 myNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="navbar-brand">Welcome, {user}</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item btn btn-danger" href="?a=logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- END: NAVBAR -->
