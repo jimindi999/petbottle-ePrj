@@ -52,20 +52,20 @@
                 else if ($_SESSION['admin_level'] === 'Admin'){
                     $r['update'] = "<a href='javascript:void()' onclick='setLevel("."{$r['id']}, {$r['no']}".")'>Update</a>";
                     $r['select'] = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
-                                    <option value='' hidden>Level</option>
-                                    <option value='Admin' {$slAdmin}>Admin</option>
-                                    <option value='Moderator' {$slModerator}>Moderator</option>
-                                    <option value='Normal' {$slNormal}>Normal</option>
-                                </select>";
+                                        <option value='' hidden>Level</option>
+                                        <option value='Admin' {$slAdmin}>Admin</option>
+                                        <option value='Moderator' {$slModerator}>Moderator</option>
+                                        <option value='Normal' {$slNormal}>Normal</option>
+                                    </select>";
                 }
                 //Moderator can only set other to moderator at max, can not set to admin
                 else{
                     $r['update'] = "<a href='javascript:void()' onclick='setLevel("."{$r['id']}, {$r['no']}".")'>Update</a>";
                     $r['select'] = "<select id='admin_level' class='form-control' name='slAdminLevel' required>
-                                    <option value='' hidden>Level</option>
-                                    <option value='Moderator' {$slModerator}>Moderator</option>
-                                    <option value='Normal' {$slNormal}>Normal</option>
-                                </select>";
+                                        <option value='' hidden>Level</option>
+                                        <option value='Moderator' {$slModerator}>Moderator</option>
+                                        <option value='Normal' {$slNormal}>Normal</option>
+                                    </select>";
                 }
                 $xtpa->insert_loop("ADMIN.LS", array('LS' => $r));
                 $i++;

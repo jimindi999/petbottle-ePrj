@@ -8,7 +8,7 @@
         $page = isset($_GET['page'])?$_GET['page']:'';
         $db->execSQL("UPDATE users SET admin_level = '{$level}' WHERE id = {$id}");
         //If one were to change their level, the change take effect immediately through the change of $_SESSION['admin']
-        if ($id === $_SESSION['user_id']) $_SESSION['admin'] = $level;
+        if ($id === $_SESSION['admin_id']) $_SESSION['admin_level'] = $level;
         if($s != '' && $page != '') $f->redir("?a=users&s={$s}&page={$page}");
         else if($s == '' && $page != '') $f->redir("?a=users&page={$page}");
         else $f->redir('?a=users');

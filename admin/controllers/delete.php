@@ -29,12 +29,12 @@
         $sql = "DELETE FROM {$table} WHERE id = '{$id}' ";
         //Get location of doc and img file on sv and delete them
         if ($doc_loc != ''){
-            $doc_loc = explode($baseUrl, $doc_loc);
+            $doc_loc = explode($baseURL, $doc_loc);
             $doc_loc = '../'.$doc_loc[1];
             unlink($doc_loc);
         }
         if ($img_loc != ''){
-            $img_loc = explode($baseUrl, $img_loc);
+            $img_loc = explode($baseURL, $img_loc);
             $img_loc = '../'.$img_loc[1];
             unlink($img_loc);
         }

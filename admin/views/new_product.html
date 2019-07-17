@@ -1,20 +1,100 @@
 <!-- BEGIN: NEW_PRODUCT -->
-<form method="POST" action="?a=new_product" name="frmNewProduct" enctype="multipart/form-data">
-    <span>Product Name: </span><input type="text" name="txtName" id="pro_name" value="{pro_name}" required><span class="errorMess" id="errProduct"> {erProduct}</span><br>
-    <span>Price: </span><input type="text" name="txtPrice" id="pro_price" value="{pro_price}" required><span class="errorMess" id="errPrice"></span><br>
+<!-- <form method="POST" action="?a=new_product" name="frmNewProduct" enctype="multipart/form-data">
+    <span>Product Name: </span><input type="text" name="txtName" id="pro_name" value="{pro_name}" required><span
+        class="errorMess" id="errProduct"> {erProduct}</span><br>
+    <span>Price: </span><input type="text" name="txtPrice" id="pro_price" value="{pro_price}" required><span
+        class="errorMess" id="errPrice"></span><br>
     <select name="slCat" id="categories" required>
         <option value="" hidden selected>Categories</option>
-        <!-- BEGIN: CAT_LIST-->
-        <option value="{LS.cat_name}">{LS.cat_name}</option>
-        <!-- END: CAT_LIST-->
-    </select><br>
-    <span>Quantity: </span><input type="text" name="txtQuantity" id="pro_quantity" value="{pro_quantity}" required><span class="errorMess" id="errQuantity"></span><br>
-    <span>Description: </span><textarea name="description" id="pro_description" value="{pro_desc}" required></textarea><br>
-    <!-- <script>
+        
+<option value="{LS.cat_name}">{LS.cat_name}</option>
+
+</select><br>
+<span>Quantity: </span><input type="text" name="txtQuantity" id="pro_quantity" value="{pro_quantity}" required><span
+    class="errorMess" id="errQuantity"></span><br>
+<span>Description: </span><textarea name="description" id="pro_description" value="{pro_desc}" required></textarea><br>
+-->
+<!-- <script>
             CKEDITOR.replace( 'description' );
     </script> -->
-    <span>Image: </span><input type="file" name="imgUl" required><span class="errorMess" id="errImg"> {erImg}</span><br>
-    <span>Document: </span><input type="file" name="docUl" required><span class="errorMess" id="errDoc"> {erDoc}</span><br>
-    <input type="submit">
+<!-- <span>Image: </span><input type="file" name="imgUl" required><span class="errorMess" id="errImg"> {erImg}</span><br>
+<span>Document: </span><input type="file" name="docUl" required><span class="errorMess" id="errDoc">
+    {erDoc}</span><br> -->
+<!-- <input type="submit"> -->
+<!-- </form> -->
+<form method="POST" action="?a=new_product" name="frmNewProduct" enctype="multipart/form-data">
+    <div class="container">
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="width: 500px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Product Name: </span>
+                        </div>
+                        <input type="text" class="form-control" name="txtName" id="pro_name" value="{pro_name}" required><span
+                            class="errorMess" id="errProduct"> {erProduct}</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Price: </span>
+                        </div>
+                        <input type="text" class="form-control" name="txtPrice" id="pro_price" value="{pro_price}" required><span
+                            class="errorMess" id="errPrice"></span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Category: </span>
+                        </div>
+                        <select name="slCat" id="categories" required>
+                            <option value="" hidden selected>Categories</option>
+                            <!-- BEGIN: CAT_LIST-->
+                            <option value="{LS.cat_name}">{LS.cat_name}</option>
+                            <!-- END: CAT_LIST-->
+                        </select>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Quantity: </span>
+                        </div>
+                        <input type="text" class="form-control" name="txtQuantity" id="pro_quantity" value="{pro_quantity}" required><span
+                            class="errorMess" id="errQuantity"></span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Description: </span>
+                        </div>
+                        <textarea name="description" id="pro_description" value="{pro_desc}"></textarea>
+                        <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#pro_description' ), {
+                                        cloudServices: {
+                                            tokenUrl: 'https://40879.cke-cs.com/token/dev/4U3HzqchzPAFERqoZOw3bh0giLHBVPGOY7lUZFqvTEeL8aApy8lrU4Re10OE',
+                                            uploadUrl: 'https://40879.cke-cs.com/easyimage/upload/'
+                                        }
+                                    })
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Image: </span>
+                        </div>
+                        <input type="file" class="form-control" name="imgUl" required><span class="errorMess" id="errImg"> {erImg}</span>
+                    </div>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Document: </span>
+                        </div>
+                        <input type="file" class="form-control" name="docUl" required><span class="errorMess" id="errDoc"> {erDoc}</span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Add Product </button>
+                        <!-- <input type="submit"> -->
+                    </div>
+            </article>
+        </div> <!-- card.// -->
+    </div>
 </form>
 <!-- END: NEW_PRODUCT -->

@@ -15,10 +15,10 @@
         $desc = $_POST['description'];
         //Upload img and doc to sv and get the result
         $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp');
-        $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseUrl);
+        $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseURL);
         $img = explode("|", $img_upload);
         $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
-        $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseUrl);
+        $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseURL);
         $doc = explode("|", $doc_upload);
         if($img[0] === 'failed'){
             $do_save = 0;

@@ -39,7 +39,7 @@
                 $xtpa->assign('lName', $lastName);
             }
         }
-        $xtpa->assign("baseUrl", $baseUrl);
+        $xtpa->assign("baseURL", $baseURL);
         $xtpa->parse("FORGOT_PASSWORD");
         $xtpa->out("FORGOT_PASSWORD");
     }
