@@ -14,7 +14,7 @@
         $quantity = $_POST['txtQuantity'];
         $desc = $_POST['description'];
         //Upload img and doc to sv and get the result
-        $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp');
+        $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp', 'webp');
         $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseURL);
         $img = explode("|", $img_upload);
         $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
