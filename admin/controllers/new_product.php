@@ -74,6 +74,7 @@
             $xtpa->assign('pro_desc', $desc);
         }        
     }
+    echo $test;
     $xtpl->assign("title", "Add new product");
     $xtpa->parse("NEW_PRODUCT");
     $content = $xtpa->text("NEW_PRODUCT");
