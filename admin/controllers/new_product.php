@@ -1,7 +1,7 @@
 <?php
     $xtpa = new XTemplate("views/new_product.html");
     $pos = (isset($_GET['cat']))?$_GET['cat']:'';
-    $cat = $db->fetch("SELECT * FROM categories WHERE 1 = 1");
+    $cat = $db->fetch("SELECT * FROM categories WHERE 1 = 1 ORDER BY cat_name");
     //Dynamically create select tag with Categories from DB as options
     foreach($cat as $r){
         $xtpa->insert_loop("NEW_PRODUCT.CAT_LIST", array("LS"=>$r));
