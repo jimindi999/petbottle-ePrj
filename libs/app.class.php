@@ -59,7 +59,7 @@
 			}
 			return $pi;
 		}
-		public function file_upload($name, $type_array, $size_limit, $type, $baseUrl){
+		public function file_upload($name, $type_array, $size_limit, $type, $baseURL){
 			$file_name = $_FILES[$name]['name'];
 			$file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 			$file_new_name = substr($file_name, 0, - strlen($file_ext) - 1)."_".time().".".$file_ext;
@@ -67,7 +67,7 @@
 			$file_size = $_FILES[$name]['size'];
 			if(in_array($file_ext, $type_array) && $file_size <= $size_limit){
 				if(move_uploaded_file($file_tmp, "../resources/".$type."/".$file_new_name)){
-					$result = "success|".$baseUrl."resources/".$type."/".$file_new_name;
+					$result = "success|".$baseURL."resources/".$type."/".$file_new_name;
 				}else{
 					$result = "failed|Upload failed";
 				}

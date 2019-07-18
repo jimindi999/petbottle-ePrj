@@ -17,21 +17,35 @@
         $img_ext_arr = array('jpeg', 'jpg', 'png', 'bmp', 'webp');
         $img_upload = $f->file_upload('imgUl', $img_ext_arr, 3000000, 'products', $baseURL);
         $img = explode("|", $img_upload);
-        $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
-        $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseURL);
-        $doc = explode("|", $doc_upload);
+        $doc[1] = '';      
         if($img[0] === 'failed'){
             $do_save = 0;
             if($img[1] === 'Upload failed') $xtpa->assign('erImg', 'Something happened on the server, please try again later');
-            else if($img[1] === 'Wrong file type') $xtpa->assign('erImg', 'File type not supported, check again, only PNG, BMP, JPG and JPEG are accepted');
+            else if($img[1] === 'Wrong file type') $xtpa->assign('erImg', 'File type not supported, check again, only PNG, BMP, JPG, JPEG and WEBP are accepted');
             else if($img[1] === 'File exceeds size limit') $xtpa->assign('erImg', 'File too big, exceeds 3MB limit');
         }
-        if($doc[0] === 'failed'){
-            $do_save = 0;
-            if($doc[1] === 'Upload failed') $xtpa->assign('erDoc', 'Something happened on the server, please try again later');
-            else if($doc[1] === 'Wrong file type') $xtpa->assign('erDoc', 'File type not supported, check again, only DOC, DOCX and PDF are accepted');
-            else if($doc[1] === 'File exceeds size limit') $xtpa->assign('erDoc', 'File too big, exceeds 10MB limit');
-        }
+        if($_FILES['docUl']['error'] == 0){
+            $doc_ext_arr = array('doc', 'docx', 'pdf', 'odt');
+            $doc_upload = $f->file_upload('docUl', $doc_ext_arr, 10000000, 'doc', $baseURL);
+            $doc = explode("|", $doc_upload);
+            if($doc[0] === 'failed'){
+                $do_save = 0;
+                $img_loc = $img[1];
+                $img_loc = explode($baseURL, $img_loc);
+                $img_loc = '../'.$img_loc[1];
+                unlink($img_loc);
+                if($doc[1] === 'Upload failed') $xtpa->assign('erDoc', 'Something happened on the server, please try again later');
+                else if($doc[1] === 'Wrong file type') $xtpa->assign('erDoc', 'File type not supported, check again, only DOC, DOCX and PDF are accepted');
+                else if($doc[1] === 'File exceeds size limit') $xtpa->assign('erDoc', 'File too big, exceeds 10MB limit');
+            }else{
+                if($img[0] === 'failed'){
+                    $doc_loc = $doc[1];
+                    $doc_loc = explode($baseURL, $doc_loc);
+                    $doc_loc = '../'.$doc_loc[1];
+                    unlink($doc_loc);
+                }
+            }
+        }          
         if($db->checkExist('products', "pro_name like '{$name}'")){
             $do_save = 0;
             $xtpa->assign("erProduct", "*Product existed");
